@@ -1,5 +1,6 @@
 import React from 'react';
-
+import './styles.css'
+import Axios from 'axios';
 
 const Ger = () => (
     <div>
@@ -62,7 +63,7 @@ class Anime extends React.Component{
             <tr>
                 <td>{this.props.data.nome} </td>
                 <td>{this.props.data.episodes} episodios</td>
-                <td> <button type="button" class="btn btn-default btn-sm btn-red" onClick={this.apagaAnime}> 
+                <td> <button type="button" class="btn btn-default btn-sm btn-red" onClick={this.apagaAnime}>
                      <span class="glyphicon glyphicon-remove"></span></button>
                 </td>
                 <td> <button type="button" class="btn btn-default btn-sm btn-blue">
