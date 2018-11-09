@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import './reset.css'
+import EpisodioThumb from './components/FrontPage/EpisodioThumb';
+import Container from './components/FrontPage/Container';
 import Axios from 'axios';
 
 
@@ -34,7 +36,7 @@ class App extends Component {
                 <div class='info-destaque hidden-xs'>
                   <div class='content full-hidden'>
                     <div class="ultimos-episodios hidden-xs">
-                      <Container>dd </Container>
+                      <Container></Container>
                       <Container></Container>
                       <Container></Container>
                       <Container></Container>
@@ -48,39 +50,6 @@ class App extends Component {
       </div>
     );
   }
-}
-
-const Container = () =>{
-  return(
-      <div class="box-episodio hidden-xs">
-            <Episodio> </Episodio>
-            <div class="lista-servers">
-              <div class="content-servers relative item1 1-versao atual esconder">
-                <ul>
-                  
-                </ul>
-                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous"/>
-               
-                <a class="btn-online" href="http://www.google.com.br/"
-                  title="Assista">  <i class="fas fa-play-circle" ></i>
-                    Assista Online
-                  </a> 
-              </div>   
-            </div>
-      </div> 
-  );
-}
-
- const Episodio = () =>{
-  return(
-    <div class ="nome-thumb">
-      <a class="tt" href="/." title=""> Oi, Mundo!</a>
-      <a href="http://www.google.com.br/" title="Hello World" class="thumb">
-        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt = "" class="img-full"></img>
-        <span class="num-episodio">epi5</span>
-      </a>    
-    </div>
-  );
 }
 
 
