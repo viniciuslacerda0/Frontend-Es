@@ -34,7 +34,7 @@ class App extends Component {
                 <div class='info-destaque hidden-xs'>
                   <div class='content full-hidden'>
                     <div class="ultimos-episodios hidden-xs">
-                      <Container> </Container>
+                      <Container>dd </Container>
                       <Container></Container>
                       <Container></Container>
                       <Container></Container>
