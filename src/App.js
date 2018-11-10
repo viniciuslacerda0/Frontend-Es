@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 import FrontPage from './components/FrontPage/FrontPage'
 import Ger from './gerencia';
+import WatchingPage from './components/WatchingPage/WatchingPage';
 
 const URL = 'url do api';
 
@@ -44,7 +45,7 @@ class App extends Component {
   render() {
     return(
               <div className="App">
-                    <FrontPage/>
+                    <WatchingPage/>
               </div>
             );
   }
