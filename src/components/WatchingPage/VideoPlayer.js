@@ -1,5 +1,5 @@
 import React from 'react';
-import "../../../node_modules/video-react/dist/video-react.css"; // import css
+//import "../../../node_modules/video-react/dist/video-react.css"; // import css
 import './WatchingPage.css';
 import OptionsBar from './OptionsBar';
 
@@ -10,11 +10,11 @@ export default class VideoPlayer extends React.Component {
 		return(
 			<div >
 				<div className="embed-responsive embed-responsive-16by9 videoPlayer">
-				<iframe 
+				<iframe
 					className="embed-responsive-item"
-					src={this.props.url} 
-					frameborder="0" 
-					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+					src={this.props.url}
+					frameborder="0"
+					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 					allowfullscreen>
 				</iframe>
 				</div>
@@ -26,4 +26,3 @@ export default class VideoPlayer extends React.Component {
 
 
 }
-

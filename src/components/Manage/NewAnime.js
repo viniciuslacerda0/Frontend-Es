@@ -1,17 +1,10 @@
 import React from 'react';
-import './styles.css'
 import Axios from 'axios';
+import '../Styles/styles.css'
 import {Glyphicon, Button, Panel, FormGroup, ControlLabel, FormControl, Checkbox} from 'react-bootstrap'
 
-const Ger = () => (
-    <div className="bloco">
-      <h1>Gerencia de animes</h1>
-      <NovoAnime />
-      <Animes />
-    </div>
-);
 
-class NovoAnime extends React.Component{
+class NewAnime extends React.Component{
   constructor (props){
       super(props);
       this.state = {
@@ -73,70 +66,5 @@ class NovoAnime extends React.Component{
   }
 }
 
-class Animes extends React.Component {
-    constructor (props){
-        super(props);
-        this.state = {
-            data: [
-                {
-                    nome: "Anime 1", episodes: 12
-                },
 
-                {
-                    nome: "Anime 2", episodes: 22
-                },
-
-                {
-                    nome: "Anime 3", episodes: 25
-                }
-            ]
-      }
-    }
-
-    render(){
-        return (
-            <div>
-                <table className="table">
-                    <tbody>
-                        <tr>
-                          <td><p className="center">Nome</p></td>
-                          <td><p className="center">Numero de Episodios</p></td>
-                          <td><p className="center">Apagar</p></td>
-                          <td><p className="center">Editar</p></td>
-                        </tr>
-                        {this.state.data.map((anime, i) => <Anime key = {i} data = {anime} />)}
-                    </tbody>
-                </table>
-            </div>
-
-        );
-    }
-  }
-
-class Anime extends React.Component{
-    constructor(props){
-      super(props);
-      this.apagaAnime = this.apagaAnime.bind(this);
-    }
-
-    apagaAnime(){
-      console.log(this.props.data.nome);
-    }
-    render(){
-        return(
-            <tr>
-                <td><p className="center">{this.props.data.nome}</p></td>
-                <td><p className="center">{this.props.data.episodes}</p></td>
-                <td><p className="center"><Button className="btn btn-default btn-sm btn-red" onClick={this.apagaAnime}>
-                     <Glyphicon glyph="remove"/></Button></p>
-                </td>
-                <td> <p className="center"><Button type="button" className="btn btn-default btn-sm btn-blue">
-                     <Glyphicon glyph="pencil"/></Button> </p>
-                </td>
-            </tr>
-
-        );
-    }
-}
-
-export default Ger;
+export default NewAnime;

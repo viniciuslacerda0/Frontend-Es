@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import FrontPage from './components/FrontPage/FrontPage'
-import Ger from './gerencia';
+import Manage from './components/Manage/Manage';
+import Upload from './components/Upload/Upload'
 import WatchingPage from './components/WatchingPage/WatchingPage';
 
 const URL = 'url do api';
