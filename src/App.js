@@ -7,7 +7,7 @@ import WatchingPage from './components/WatchingPage/WatchingPage';
 const URL = 'url do api';
 
 class App extends Component {
-  
+
   constructor(props){
     super(props)
     this.state = {description: '',animes:[]}
@@ -45,7 +45,7 @@ class App extends Component {
   render() {
     return(
               <div className="App">
-                    <WatchingPage/>
+                    <FrontPage/>
               </div>
             );
   }
