@@ -42,13 +42,14 @@ class UploadForm extends React.Component {
               <FormGroup controlId="formBasicText">
               <ControlLabel>Nome do Anime</ControlLabel>
               <FormControl type="text" value={this.state.nome} onChange={this.handleChangeName}/>
-
+              <br/>
               <ControlLabel>Número do Episódio:</ControlLabel>
               <FormControl type="number" className="number" value={this.state.numEps} onChange={this.handleChangeEps}/>
-
+              <br/>
               <ControlLabel>Arquivo:</ControlLabel>
               <p><FormControl type="file"/></p>
-                <Button type="submit" bsStyle="success">Upload</Button>
+              <br/>
+              <Button type="submit" bsStyle="success">Upload</Button>
               </FormGroup>
             </form>
           </div>

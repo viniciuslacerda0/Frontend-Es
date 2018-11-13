@@ -1,10 +1,13 @@
 import React from 'react';
 import '../Styles/styles.css'
 import UploadForm from './UploadForm'
+import PageHeader from '../Template/PageHeader'
+import Topo from '../Template/Topo'
 
 const Upload = () => (
     <div className="bloco">
-        <h1>Novo Episódio</h1>
+        <Topo/>
+        <PageHeader className="" name='Novo' small='episodio'/>
         <UploadForm />
     </div>
 );

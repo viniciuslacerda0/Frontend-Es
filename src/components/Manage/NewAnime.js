@@ -53,7 +53,7 @@ class NewAnime extends React.Component{
                   <ControlLabel>Nome do Anime</ControlLabel>
                   <FormControl type="text" value={this.state.nome} onChange={this.handleChangeName}/>
                   <ControlLabel>Numero de episodios</ControlLabel>
-                  <FormControl type="number" className="number" value={this.state.numEps} onChange={this.handleChangeEps} disabled={this.state.indefinido}/>
+                  <FormControl type="number" value={this.state.numEps} onChange={this.handleChangeEps} disabled={this.state.indefinido}/>
                   <Checkbox onClick={this.undefinedEps}>Indefinido</Checkbox>
                 </FormGroup>
                 <Button type="submit" bsStyle="success">Submit</Button>
