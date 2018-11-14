@@ -1,5 +1,5 @@
 import React from 'react';
-import {Glyphicon, Button, Panel, FormGroup, ControlLabel, FormControl, Checkbox} from 'react-bootstrap'
+import {Glyphicon, Button, FormControl} from 'react-bootstrap'
 import Axios from 'axios'
 
 class Anime extends React.Component{

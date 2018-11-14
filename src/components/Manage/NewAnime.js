@@ -1,7 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import '../Styles/styles.css'
-import {Glyphicon, Button, Panel, FormGroup, ControlLabel, FormControl, Checkbox} from 'react-bootstrap'
+import {Glyphicon, Button, Panel, FormGroup, ControlLabel, FormControl} from 'react-bootstrap'
 
 
 class NewAnime extends React.Component{
@@ -65,7 +65,7 @@ class NewAnime extends React.Component{
           <Panel.Collapse>
             <Panel.Body>
               <form onSubmit={this.handleSubmit}>
-                <FormGroup controlId="formBasicText">
+                <FormGroup>
                   <ControlLabel>Nome do Anime</ControlLabel>
                   <FormControl type="text" value={this.state.name} onChange={this.handleChangeName}/>
                   <ControlLabel>Genero principal</ControlLabel>
