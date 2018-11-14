@@ -1,8 +1,13 @@
 import React from 'react';
+
+import {Grid, Col, Row} from 'react-bootstrap';
+import {Link, Route} from 'react-router-dom';
+
 import PageHeader from '../Template/PageHeader';
 import Propaganda from '../Template/Propaganda';
 import Topo from '../Template/Topo';
-import {Grid, Col, Row} from 'react-bootstrap';
+import Genre from './Genre';
+
 import './GenresPage.css';
 
 export default class GenresPage extends React.Component {
@@ -11,7 +16,7 @@ export default class GenresPage extends React.Component {
 		super(props);
 		this.state = {
 			genres : [
-				{nome: "acao", animes:['1', '2', '3', '4'], len: 4},
+				{nome: "açao", animes:['1', '2', '3', '4'], len: 4},
 				{nome: "aventura", animes: ['2', '3', '7', '10', '11', '14', '20', '21', '50'], len: 9},
 				{nome: "comedia", animes: ['2', '3', '7', '10', '14', '20', '21', '50'], len: 8},
 				{nome: "drama", animes: ['2', '3', '7', '10', '11', '14', '20', '21', '50'], len: 9},
@@ -40,7 +45,17 @@ export default class GenresPage extends React.Component {
 						<Row>
 							<PageHeader name="Categorias"/>
 						</Row>
-							{this.state.genres.map(a => <a className="genreBox"> {a.nome.toUpperCase()}({a.len}) </a>)}
+						<main>
+							{this.state.genres.map(a => 
+								<Link 	className="genreBox" 
+										to={{ 
+											pathname: `/generos/${a.nome}`,
+											state: { nome: `${a.nome.charAt(0).toUpperCase() + a.nome.slice(1)}`}
+								}}> 
+									{a.nome.toUpperCase()}({a.len}) 
+								</Link>
+							)}
+						</main>
 					</Col>
 					<Col md={3}>
 						<PageHeader small='PARCEIROS'/>
@@ -48,10 +63,9 @@ export default class GenresPage extends React.Component {
 					</Col>
 				</Grid>
 				</div>
-			
 			</div>
 		)
 	}
 
 
-}
+} 
