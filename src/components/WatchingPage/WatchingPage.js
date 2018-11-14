@@ -10,7 +10,7 @@ export default class WatchingPage extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			url: "https://www.youtube.com/embed/PYF8Y47qZQY",
+			url: "https://www.youtube.com/embed/OVLgYc-hYEY",
 			anime: "Naruto",
 			temporada: 1,
 			episodio: 5

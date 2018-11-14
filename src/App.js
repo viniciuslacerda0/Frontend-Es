@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
+import {Route} from 'react-router-dom';
 import FrontPage from './components/FrontPage/FrontPage'
 import Manage from './components/Manage/Manage';
 import Upload from './components/Upload/Upload'
 import WatchingPage from './components/WatchingPage/WatchingPage';
+import GenresPage from './components/GenresPage/GenresPage'
+import Genre from './components/GenresPage/Genre'
 
 const URL = 'url do api';
 
@@ -46,7 +49,9 @@ class App extends Component {
   render() {
     return(
               <div className="App">
-                    <FrontPage/>
+                    <Route exact path='/' component={FrontPage}/>
+                    <Route  path='/generos/:id' component={Genre}/>
+                    <Route exact path='/generos' component={GenresPage}/>
               </div>
             );
   }
