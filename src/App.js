@@ -4,6 +4,7 @@ import FrontPage from './components/FrontPage/FrontPage'
 import Manage from './components/Manage/Manage';
 import Upload from './components/Upload/Upload'
 import WatchingPage from './components/WatchingPage/WatchingPage';
+import GenresPage from './components/GenresPage/GenresPage'
 
 const URL = 'url do api';
 
@@ -46,7 +47,7 @@ class App extends Component {
   render() {
     return(
               <div className="App">
-                    <FrontPage/>
+                    <GenresPage/>
               </div>
             );
   }
