@@ -6,4 +6,4 @@ import Manage from './components/Manage/Manage';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<Manage/>, document.getElementById('app'));
+ReactDOM.render(<Upload/>, document.getElementById('app'));

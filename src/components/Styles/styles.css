@@ -18,14 +18,16 @@
     color:green;
 }
 
-.number{
-    width: 72px;
-}
-
 input{
   border-radius: 2px
 }
 
 .center{
   text-align: center;
+}
+
+
+
+.form-control {
+  width: 90% !important;
 }

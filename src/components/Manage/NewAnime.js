@@ -9,35 +9,51 @@ class NewAnime extends React.Component{
       super(props);
       this.state = {
           open: false,
-          indefinido: false,
-          nome: "",
-          numEps: 0
+          genre: "",
+          name: "",
+          resume: "",
+          file: {}
+
       }
-      this.undefinedEps = this.undefinedEps.bind(this);
-      this.handleChangeEps = this.handleChangeEps.bind(this);
+      this.handleChangeGenre = this.handleChangeGenre.bind(this);
       this.handleChangeName = this.handleChangeName.bind(this);
+      this.handleChangeResume = this.handleChangeResume.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
-  }
-  undefinedEps(){
-    this.setState({ indefinido: !this.state.indefinido, numEps: 0 })
+      this.handleFile = this.handleFile.bind(this);
   }
 
-  handleChangeEps(event) {
-    this.setState({numEps: event.target.value});
+  handleChangeGenre(event) {
+    this.setState({genre: event.target.value});
   }
 
   handleChangeName(event) {
-    this.setState({nome: event.target.value});
+    this.setState({name: event.target.value});
+  }
+
+  handleChangeResume(event) {
+    this.setState({resume: event.target.value});
+  }
+
+  handleFile(event){
+    let reader = new FileReader();
+    let file = event.target.files[0];
+
+    reader.onloadend = () => {
+      this.setState({
+        file: file
+      });
+    }
+
+    reader.readAsDataURL(file)
   }
 
   handleSubmit(event){
-    if(this.state.numEps < 0){
-      this.setState({numEps: 0});
-    }
     var data = {}
-    data.nome = this.state.nome;
-    data.numEps = this.state.numEps;
-    Axios.post('', data).then(response => console.log(response)).catch(alert("Problema"));
+    data.name = this.state.name;
+    data.genre = this.state.genre;
+    this.resume = this.state.resume;
+    this.thumb = this.state.file;
+    Axios.post('http://ec2-54-91-147-129.compute-1.amazonaws.com/anime', data).then(response => console.log(response)).catch(alert("Problema"));
     event.preventDefault();
   }
 
@@ -51,10 +67,13 @@ class NewAnime extends React.Component{
               <form onSubmit={this.handleSubmit}>
                 <FormGroup controlId="formBasicText">
                   <ControlLabel>Nome do Anime</ControlLabel>
-                  <FormControl type="text" value={this.state.nome} onChange={this.handleChangeName}/>
-                  <ControlLabel>Numero de episodios</ControlLabel>
-                  <FormControl type="number" value={this.state.numEps} onChange={this.handleChangeEps} disabled={this.state.indefinido}/>
-                  <Checkbox onClick={this.undefinedEps}>Indefinido</Checkbox>
+                  <FormControl type="text" value={this.state.name} onChange={this.handleChangeName}/>
+                  <ControlLabel>Genero principal</ControlLabel>
+                  <FormControl type="text" value={this.state.genre} onChange={this.handleChangeGenre}/>
+                  <ControlLabel>Descrição</ControlLabel>
+                  <FormControl componentClass="textarea" value={this.state.resume} onChange={this.handleChangeResume}/>
+                  <ControlLabel>Thumb</ControlLabel>
+                  <FormControl type="file" onChange={this.handleFile}/>
                 </FormGroup>
                 <Button type="submit" bsStyle="success">Submit</Button>
               </form>
