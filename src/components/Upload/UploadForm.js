@@ -29,7 +29,7 @@ class UploadForm extends React.Component {
         data.name = this.state.episodeName;
         data.chapter = this.state.chapter;
         data.description = this.state.description;
-        // data.anime  Precisa pegar o objeto anime pelo back
+        // data.anime Precisa pegar o objeto anime pelo back
         Axios.post('http://ec2-54-91-147-129.compute-1.amazonaws.com/episodes', data).then((response) => response.json()).then(() => alert("Enviado com sucesso")).catch(alert("error"));
         event.preventDefault();
     };

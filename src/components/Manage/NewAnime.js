@@ -51,9 +51,9 @@ class NewAnime extends React.Component{
     var data = {}
     data.name = this.state.name;
     data.genre = this.state.genre;
-    this.resume = this.state.resume;
-    this.thumb = this.state.file;
-    Axios.post('http://ec2-54-91-147-129.compute-1.amazonaws.com/anime', data).then(response => console.log(response)).catch(alert("Problema"));
+    data.resume = this.state.resume;
+    data.file = this.state.file;
+    Axios.post('http://ec2-54-91-147-129.compute-1.amazonaws.com/animes', data).then(response => console.log(response)).catch(alert("Problema"));
     event.preventDefault();
   }
 
