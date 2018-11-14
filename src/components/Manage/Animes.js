@@ -7,15 +7,15 @@ class Animes extends React.Component {
         this.state = {
             data: [
                 {
-                    nome: "Anime 1", episodes: 12
+                  name: "Naruto", genre: "Luta", resume: "Naruto é hokage"
                 },
 
                 {
-                    nome: "Anime 2", episodes: 22
+                    name: "Anime 2", genre: "Comedia", resume: "Esse anime é engraçado"
                 },
 
                 {
-                    nome: "Anime 3", episodes: 25
+                  name: "Boku no pico", genre: "Terror", resume: "TOP"
                 }
             ]
       }
@@ -28,7 +28,8 @@ class Animes extends React.Component {
                     <tbody>
                         <tr>
                           <td><p className="center">Nome</p></td>
-                          <td><p className="center">Numero de Episodios</p></td>
+                          <td><p className="center">Genero</p></td>
+                          <td><p className="center">Descrição</p></td>
                           <td><p className="center">Apagar</p></td>
                           <td><p className="center">Editar</p></td>
                         </tr>

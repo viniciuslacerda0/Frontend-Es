@@ -14,8 +14,8 @@
     color:blue;
 }
 
-.number{
-    width: 72px;
+.btn-green {
+    color:green;
 }
 
 input{
@@ -24,4 +24,10 @@ input{
 
 .center{
   text-align: center;
+}
+
+
+
+.form-control {
+  width: 90% !important;
 }
