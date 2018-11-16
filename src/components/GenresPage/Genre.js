@@ -5,8 +5,6 @@ import PageHeader from '../Template/PageHeader';
 import AnimeByGenreBox from './AnimeByGenreBox';
 import {Grid, Col, Row} from 'react-bootstrap';
  
-// formato do props passado
-//name={this.props.location.state.nome}
 
 export default class Genre extends React.Component {
 
@@ -50,7 +48,7 @@ export default class Genre extends React.Component {
 					<Grid >
 					<Col md={9}>
 						<Row>
-							<PageHeader name="Nome da Categoria"/>
+							<PageHeader name={this.props.location.state.nome}/>
 						</Row>
 						<Col md={4}>
 							{animes.map((a, index) => {
