@@ -50,8 +50,8 @@ class App extends Component {
     return(
               <div className="App">
                     <Route exact path='/' component={FrontPage}/>
-                    <Route  path='/generos/:id' component={Genre}/>
-                    <Route exact path='/generos' component={GenresPage}/>
+                    <Route  path='/generos' component={Genre}/>
+                    <Route exact path='/seila' component={GenresPage}/>
               </div>
             );
   }

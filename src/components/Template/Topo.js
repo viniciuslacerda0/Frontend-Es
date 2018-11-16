@@ -34,11 +34,9 @@ export default class Topo extends Component {
                     <div className='container'>
                         <div className='navbar-collapse collapse'>
                             <ul className="nav navbar-nav">
-                                <li><a href="#">ANIMES</a></li>
-                                <li><a href="#">CATEGORIAS</a></li>
-                                <li><a href="#">DUBLADOS</a></li>
-                                <li><a href="#">LEGENDADOS</a></li>
-                                <li><a href="#">CONTATO</a></li>
+                                <li><a href="/">HOME</a></li>
+                                <li><a href="/generos">GÊNEROS</a></li>
+                                <li><a href="/contato">CONTATO</a></li>
                                 <li><input className="form-control input-md" placeholder="Pesquisar" type='text'/></li>
                                 <li><button type='submit' className='buttonMenu btn btn-info'>
                                         <i className='fa fa-search'></i>
