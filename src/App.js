@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 import {Route} from 'react-router-dom';
 import FrontPage from './components/FrontPage/FrontPage'
-import Manage from './components/Manage/Manage';
+import Admin from './components/Admin/Admin';
 import Upload from './components/Upload/Upload'
 import WatchingPage from './components/WatchingPage/WatchingPage';
 import GenresPage from './components/GenresPage/GenresPage'
 import Genre from './components/GenresPage/Genre'
+import NewAnime from './components/Admin/NewAnime'
+import NewEpisodio from './components/Admin/NewEpisodio'
+import EditAnime from './components/Admin/EditAnime'
 
 const URL = 'url do api';
 
@@ -52,6 +55,11 @@ class App extends Component {
                     <Route exact path='/' component={FrontPage}/>
                     <Route  path='/generos/:id' component={Genre}/>
                     <Route exact path='/generos' component={GenresPage}/>
+                    <Route exact path='/admin' component={Admin}/>
+                    <Route exact path="/admin/adicionar_anime" component={NewAnime}/>
+                    <Route exact path="/admin/adicionar_episodios" component={NewEpisodio}/>
+                    <Route exact path="/admin/editar_anime" component={EditAnime}/>
+                    <Route exact path="/admin/editar_episodios" component={EditAnime}/>
               </div>
             );
   }

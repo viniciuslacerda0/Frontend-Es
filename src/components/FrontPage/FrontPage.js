@@ -34,6 +34,7 @@ export default class FrontPage extends Component {
 			<Topo/>
 				<Propaganda/>
 				<div className='container todo'>
+				
 			<Grid >
 				<Col md={9}>
 					<Row>

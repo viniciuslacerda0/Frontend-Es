@@ -1,14 +1,13 @@
 import React from 'react';
 import Axios from 'axios';
 import '../Styles/styles.css'
-import {Glyphicon, Button, Panel, FormGroup, ControlLabel, FormControl} from 'react-bootstrap'
+import {Glyphicon, Button, Panel, FormGroup, ControlLabel, FormControl, Grid} from 'react-bootstrap'
 
 
 class NewAnime extends React.Component{
   constructor (props){
       super(props);
       this.state = {
-          open: false,
           genre: "",
           name: "",
           resume: "",
@@ -60,26 +59,27 @@ class NewAnime extends React.Component{
   render(){
     return(
       <div>
-        <Button bsStyle="primary" onClick={() => this.setState({ open: !this.state.open })}><Glyphicon glyph="plus"/> Novo anime</Button>
-        <Panel expanded={this.state.open}>
-          <Panel.Collapse>
-            <Panel.Body>
-              <form onSubmit={this.handleSubmit}>
-                <FormGroup>
-                  <ControlLabel>Nome do Anime</ControlLabel>
-                  <FormControl type="text" value={this.state.name} onChange={this.handleChangeName}/>
-                  <ControlLabel>Genero principal</ControlLabel>
-                  <FormControl type="text" value={this.state.genre} onChange={this.handleChangeGenre}/>
-                  <ControlLabel>Descrição</ControlLabel>
-                  <FormControl componentClass="textarea" value={this.state.resume} onChange={this.handleChangeResume}/>
-                  <ControlLabel>Thumb</ControlLabel>
-                  <FormControl type="file" onChange={this.handleFile}/>
-                </FormGroup>
-                <Button type="submit" bsStyle="success">Submit</Button>
-              </form>
-            </Panel.Body>
-          </Panel.Collapse>
-        </Panel>
+        <Grid>
+          <Panel expanded={true}>
+            <Panel.Collapse>
+              <Panel.Body>
+                <form onSubmit={this.handleSubmit}>
+                  <FormGroup>
+                    <ControlLabel>Nome do Anime</ControlLabel>
+                    <FormControl type="text" value={this.state.name} onChange={this.handleChangeName}/>
+                    <ControlLabel>Genero principal</ControlLabel>
+                    <FormControl type="text" value={this.state.genre} onChange={this.handleChangeGenre}/>
+                    <ControlLabel>Descrição</ControlLabel>
+                    <FormControl componentClass="textarea" value={this.state.resume} onChange={this.handleChangeResume}/>
+                    <ControlLabel>Thumb</ControlLabel>
+                    <FormControl type="file" onChange={this.handleFile}/>
+                  </FormGroup>
+                  <Button type="submit" bsStyle="success">Submit</Button>
+                </form>
+              </Panel.Body>
+            </Panel.Collapse>
+          </Panel>
+        </Grid>
       </div>
     )
   }
