@@ -5,21 +5,11 @@ export default class Animes extends Component {
 
 	constructor(props){
       super(props);
-      this.state = {
-      	list: [{name: "nanatsu no taizai", episode: 3, thumb: "https://i.kym-cdn.com/photos/images/newsfeed/001/155/275/559.gif" },
-        {name: "naruto", episode: 4, thumb: "https://i.kym-cdn.com/photos/images/newsfeed/001/155/275/559.gif" },
-        {name: "dragon ball", episode: 5, thumb: "https://i.kym-cdn.com/photos/images/newsfeed/001/155/275/559.gif" },
-        {name: "fulmmetal", episode: 6, thumb: "https://i.kym-cdn.com/photos/images/newsfeed/001/155/275/559.gif" },
-        {name: "fulmmetal", episode: 6, thumb: "https://i.kym-cdn.com/photos/images/newsfeed/001/155/275/559.gif" },
-        {name: "fulmmetal", episode: 6, thumb: "https://i.kym-cdn.com/photos/images/newsfeed/001/155/275/559.gif" },
-        {name: "fulmmetal", episode: 6, thumb: "https://i.kym-cdn.com/photos/images/newsfeed/001/155/275/559.gif" },
-        {name: "fulmmetal", episode: 6, thumb: "https://i.kym-cdn.com/photos/images/newsfeed/001/155/275/559.gif" },]
-      }
       this.renderAnimes = this.renderAnimes.bind(this)
     }
 
     renderAnimes = () => {
-        const list = this.state.list;
+        const list = this.props.list;
         return list.map( anime => (
                 <div class="box-episodio hidden-xs">
                     <div class ="nome-thumb">

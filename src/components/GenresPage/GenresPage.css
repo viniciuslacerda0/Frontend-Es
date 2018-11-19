@@ -14,3 +14,9 @@
 	background-color: #467699;
 	color: white;
 }
+
+.animeBoxImg {
+	height: 220px;
+	width: 180px;
+	border: 1px solid #878a8e;
+}

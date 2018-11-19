@@ -1,0 +1,15 @@
+.box{
+	border: 5px solid black;
+	border-radius: 5px;
+	font-size: 1.2em;
+}
+
+.icon {
+	font-size: 4em;
+}
+
+.filter {
+	margin-top: 50px;
+	margin-bottom: 80px;
+}
+
