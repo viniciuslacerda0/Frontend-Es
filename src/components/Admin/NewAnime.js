@@ -54,11 +54,15 @@ class NewAnime extends React.Component{
     data.set('resume', this.state.resume);
     data.set('thumb', this.state.file);
 
-    Axios.post('http://34.239.129.125/animes', data,
-    {
-      authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViZWI5Yzk4YmQ1YTliMjJmYjIzYWQyOCIsImlhdCI6MTU0MjY2OTg2MCwiZXhwIjoxNTQyNjc3MDYwfQ.J009O5VO2fWSf1StGPtRp0jOHkxz8k9JgAhMlNEblHk",
+    const url = 'http://34.239.129.125/'
+    // var token = (colocar o token aqui)
+    Axios.post(url + 'animes', data,
+    { headers: {
+      authorization: `Bearer ${token}`,
       'content-type': 'multipart/form-data'
-    }).then(response => console.log(response.body)).catch(response => console.log(response));
+    }
+  }).then(response => console.log(response.data))
+        .catch(response => console.log(response.data));
 
     event.preventDefault();
   }
