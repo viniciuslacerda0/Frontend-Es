@@ -35,6 +35,7 @@ export default class Topo extends Component {
                         <div className='navbar-collapse collapse'>
                             <ul className="nav navbar-nav">
                                 <li><a href="/">HOME</a></li>
+                                <li><a href="/showanimes">ANIMES</a></li>
                                 <li><a href="/generos">GÊNEROS</a></li>
                                 <li><a href="/contato">CONTATO</a></li>
                                 <li><input className="form-control input-md" placeholder="Pesquisar" type='text'/></li>

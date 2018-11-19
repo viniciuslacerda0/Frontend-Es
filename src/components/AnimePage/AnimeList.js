@@ -2,17 +2,17 @@ import React from 'react';
 import {Row, Col, Grid} from 'react-bootstrap';
 import '../Styles/styles.css'
 import Topo from '../Template/Topo'
-import Anime from './Anime'
+import ShowAnimes from '../AnimePage/ShowAnimes'
 
 
 
-const AnimePage = () =>(
+const ShowAnimes = () =>(
         <div>
-	        <Topo/>
-                <Anime/>
-	</div>
+			<Topo/>
+            <ShowAnimes/>
+		</div>
 );
   
 
 
-export default AnimePage;
+export default ShowAnimes;
