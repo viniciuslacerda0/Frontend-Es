@@ -47,12 +47,19 @@ class NewAnime extends React.Component{
   }
 
   handleSubmit(event){
-    var data = {}
-    data.name = this.state.name;
-    data.genre = this.state.genre;
-    data.resume = this.state.resume;
-    data.file = this.state.file;
-    Axios.post('http://ec2-54-91-147-129.compute-1.amazonaws.com/animes', data).then(response => console.log(response)).catch(alert("Problema"));
+
+    var data = new FormData();
+    data.set('name', this.state.name);
+    data.set('genre', this.state.genre);
+    data.set('resume', this.state.resume);
+    data.set('thumb', this.state.file);
+
+    Axios.post('http://34.239.129.125/animes', data,
+    {
+      authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViZWI5Yzk4YmQ1YTliMjJmYjIzYWQyOCIsImlhdCI6MTU0MjY2OTg2MCwiZXhwIjoxNTQyNjc3MDYwfQ.J009O5VO2fWSf1StGPtRp0jOHkxz8k9JgAhMlNEblHk",
+      'content-type': 'multipart/form-data'
+    }).then(response => console.log(response.body)).catch(response => console.log(response));
+
     event.preventDefault();
   }
 
