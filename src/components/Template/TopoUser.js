@@ -38,8 +38,7 @@ export default class Topo extends Component {
                                 <li><a href="/showanimes">ANIMES</a></li>
                                 <li><a href="/generos">GÊNEROS</a></li>
                                 <li><a href="/contato">CONTATO</a></li>
-                                <li><a style={{color: "white", cursor: "pointer"}} onClick={() => this.showLogin()}>LOGIN</a></li>
-                                <li><a style={{color: "white", cursor: "pointer"}} onClick={() => this.showRegister()}>CADASTRO</a></li>
+                                <li><a style={{color: "white", cursor: "pointer"}} >SAIR</a></li>
                                 <li><input className="form-control input-md" placeholder="Pesquisar" type='text'/></li>
                                 <li><button type='submit' className='buttonMenu btn btn-info'>
                                         <i className='fa fa-search'></i>

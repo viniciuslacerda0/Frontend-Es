@@ -36,7 +36,7 @@ export default class Login extends Component{
                 <div className='login'>
                   <form onSubmit={this.handleSubmit}>
                     <FormGroup>
-                    <ControlLabel> Login </ControlLabel>
+                    <ControlLabel> Usuário </ControlLabel>
                     <FormControl className="center" type="email" value={this.state.username} onChange={this.handleChangeUsername}/>
                     <ControlLabel> Senha </ControlLabel>
                     <FormControl className="center" type="password" value={this.state.password} onChange={this.handleChangePassword}/>

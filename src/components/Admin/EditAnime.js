@@ -47,9 +47,10 @@ class Animes extends React.Component {
                         onChange={this.handleChange}/>
                     </FormGroup>
                     <Button type="submit" bsStyle="success">Filtrar</Button>
+                    <a href="/admin"><Button bsStyle="danger">Voltar</Button></a>
+
                   </Form>
                 </div>
-
                 <PageHeader name="Todos os Animes Cadastrados:"/>
                 <table className="table">
                     <tbody>
