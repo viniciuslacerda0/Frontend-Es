@@ -75,6 +75,7 @@ class NewAnime extends React.Component{
                     <FormControl type="file" onChange={this.handleFile}/>
                   </FormGroup>
                   <Button type="submit" bsStyle="success">Submit</Button>
+                  <a href="/admin"><Button bsStyle="info">Voltar</Button></a>
                 </form>
               </Panel.Body>
             </Panel.Collapse>

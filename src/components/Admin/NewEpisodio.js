@@ -50,6 +50,7 @@ class NewEpisodio extends React.Component{
                     <FormControl type="file" onChange={this.handleFile}/>
                   </FormGroup>
                   <Button type="submit" bsStyle="success">Filtrar</Button>
+                  <a href="/admin"><Button bsStyle="info">Voltar</Button></a>
                 </form>
               </Panel.Body>
             </Panel.Collapse>

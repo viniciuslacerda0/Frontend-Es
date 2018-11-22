@@ -98,3 +98,10 @@ a:hover{
     height: 100px;
     background: black;
 }
+
+
+.nav{
+    position: relative;
+    left: 60px;
+    background-position: center;
+}
