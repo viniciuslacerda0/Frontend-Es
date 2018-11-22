@@ -47,12 +47,23 @@ class NewAnime extends React.Component{
   }
 
   handleSubmit(event){
-    var data = {}
-    data.name = this.state.name;
-    data.genre = this.state.genre;
-    data.resume = this.state.resume;
-    data.file = this.state.file;
-    Axios.post('http://ec2-54-91-147-129.compute-1.amazonaws.com/animes', data).then(response => console.log(response)).catch(alert("Problema"));
+
+    var data = new FormData();
+    data.set('name', this.state.name);
+    data.set('genre', this.state.genre);
+    data.set('resume', this.state.resume);
+    data.set('thumb', this.state.file);
+
+    const url = 'http://34.239.129.125/'
+    // var token = (colocar o token aqui)
+    Axios.post(url + 'animes', data,
+    { headers: {
+      authorization: `Bearer ${token}`,
+      'content-type': 'multipart/form-data'
+    }
+  }).then(response => console.log(response.data))
+        .catch(response => console.log(response.data));
+
     event.preventDefault();
   }
 
