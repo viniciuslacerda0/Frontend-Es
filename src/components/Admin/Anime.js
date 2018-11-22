@@ -9,6 +9,7 @@ class Anime extends React.Component{
         name: this.props.data.name,
         genre: this.props.data.genre,
         resume: this.props.data.resume,
+        id: this.props.data._id,
         input: false
       }
       this.deleteAnime = this.deleteAnime.bind(this);
@@ -20,8 +21,14 @@ class Anime extends React.Component{
     }
 
     deleteAnime(){
-      var anime = this.state.name;
-      Axios.delete('http://ec2-54-91-147-129.compute-1.amazonaws.com/animes/'+anime).then(() => console.log("sucesso")).catch(() => alert("error"))
+      var id = this.state.id;
+      var token = ""
+      Axios.delete('http://34.239.129.125/animes/'+id, {
+         headers: {
+           authorization: `Bearer ${token}`
+         }
+       }).then((res) => console.log(res.data))
+            .catch(() => alert("error"));
     }
 
     editAnime(){

@@ -3,27 +3,17 @@ import Anime from './Anime'
 import PageHeader from '../Template/PageHeader';
 import './admin.css'
 import {Grid, FormControl, Button, Form, FormGroup} from 'react-bootstrap';
+import Axios from 'axios';
 
 class Animes extends React.Component {
     constructor (props){
         super(props);
         this.state = {
-            data: [
-                {
-                  name: "Naruto", genre: "Luta", resume: "Naruto é hokage"
-                },
-
-                {
-                    name: "Anime 2", genre: "Comedia", resume: "Esse anime é engraçado"
-                },
-
-                {
-                  name: "Boku no pico", genre: "Terror", resume: "TOP"
-                }
-            ],
+            data: [],
             anime: ""
       }
       this.handleChange = this.handleChange.bind(this);
+      Axios.get('http://34.239.129.125/animes').then(response => response.data.content.animes).then(res => this.setState({data: res}));
     }
 
     handleChange(e) {

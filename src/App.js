@@ -10,6 +10,7 @@ import Genre from './components/GenresPage/Genre'
 import NewAnime from './components/Admin/NewAnime'
 import NewEpisodio from './components/Admin/NewEpisodio'
 import EditAnime from './components/Admin/EditAnime'
+import AnimeList from './components/AnimePage/AnimeList'
 
 const URL = 'url do api';
 
@@ -55,6 +56,7 @@ class App extends Component {
                     <Route exact path='/' component={FrontPage}/>
                     <Route  path='/generos/:id' component={Genre}/>
                     <Route exact path='/generos' component={GenresPage}/>
+                    <Route exact path='/animes' component={AnimeList}/>
                     <Route exact path='/admin' component={Admin}/>
                     <Route exact path="/admin/adicionar_anime" component={NewAnime}/>
                     <Route exact path="/admin/adicionar_episodios" component={NewEpisodio}/>
