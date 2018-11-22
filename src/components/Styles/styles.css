@@ -2,6 +2,7 @@
   width: 600px;
   padding: 10px;
   margin: auto;
+  background-color: white;
   position: relative;
   text-align: left;
 }
@@ -26,7 +27,9 @@ input{
   text-align: center;
 }
 
-
+.white{
+  background-color: white;
+}
 
 .form-control {
   width: 90% !important;

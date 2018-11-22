@@ -8,7 +8,7 @@ import WatchingPage from './components/WatchingPage/WatchingPage';
 import GenresPage from './components/GenresPage/GenresPage'
 import Genre from './components/GenresPage/Genre'
 import NewAnime from './components/Admin/NewAnime'
-import NewEpisodio from './components/Admin/NewEpisodio'
+import NewEpisode from './components/Admin/NewEpisode'
 import EditAnime from './components/Admin/EditAnime'
 import AnimeList from './components/AnimePage/AnimeList'
 
@@ -59,7 +59,7 @@ class App extends Component {
                     <Route exact path='/animes' component={AnimeList}/>
                     <Route exact path='/admin' component={Admin}/>
                     <Route exact path="/admin/adicionar_anime" component={NewAnime}/>
-                    <Route exact path="/admin/adicionar_episodios" component={NewEpisodio}/>
+                    <Route exact path="/admin/adicionar_episodios" component={NewEpisode}/>
                     <Route exact path="/admin/editar_anime" component={EditAnime}/>
                     <Route exact path="/admin/editar_episodios" component={EditAnime}/>
               </div>
