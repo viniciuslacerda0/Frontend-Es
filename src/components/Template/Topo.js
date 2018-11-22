@@ -9,23 +9,28 @@ export default class Topo extends Component {
         super(props)
         this.state ={
             showLogin: false,
-            showRegister: false
+            showRegister: false,
+            isLogged: sessionStorage.getItem('token'),
+            role: sessionStorage.getItem('role')
         }
     }
-
     showLogin(){
         this.setState({
             showLogin: !this.state.showLogin,
             showRegister: false
         })
     }
-
     showRegister(){
         this.setState({
             showRegister: !this.state.showRegister,
             showLogin: false
         })
     }
+
+    logOut() {
+        sessionStorage.clear();
+        document.location.reload(true);
+        }
 
     render(){
         return(
@@ -38,12 +43,14 @@ export default class Topo extends Component {
                                 <li><a href="/showanimes">ANIMES</a></li>
                                 <li><a href="/generos">GÊNEROS</a></li>
                                 <li><a href="/contato">CONTATO</a></li>
-                                <li><a style={{color: "white", cursor: "pointer"}} onClick={() => this.showLogin()}>LOGIN</a></li>
-                                <li><a style={{color: "white", cursor: "pointer"}} onClick={() => this.showRegister()}>CADASTRO</a></li>
+                                {this.state.role === "Admin" ? <li><a href="/admin" style={{color: "white", cursor: "pointer"}}>UPLOAD</a></li> : null}
+                                {!this.state.isLogged ? <li><a style={{color: "white", cursor: "pointer"}} onClick={() => this.showLogin()}>LOGIN</a></li> : null}
+                                {!this.state.isLogged ? <li><a style={{color: "white", cursor: "pointer"}} onClick={() => this.showRegister()}>CADASTRO</a></li> : null}
                                 <li><input className="form-control input-md" placeholder="Pesquisar" type='text'/></li>
                                 <li><button type='submit' className='buttonMenu btn btn-info'>
                                         <i className='fa fa-search'></i>
                                     </button></li>
+                                {this.state.isLogged ? (<li><a style={{color: "white", cursor: "pointer"}} onClick={() => this.logOut()}>SAIR</a></li>) : null}
                             </ul>
                         </div>
                     </div>
