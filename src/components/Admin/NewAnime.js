@@ -56,6 +56,7 @@ class NewAnime extends React.Component{
 
     const url = 'http://34.239.129.125/'
     // var token = (colocar o token aqui)
+    var token = ""
     Axios.post(url + 'animes', data,
     { headers: {
       authorization: `Bearer ${token}`,
