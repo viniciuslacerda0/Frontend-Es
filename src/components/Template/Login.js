@@ -24,10 +24,22 @@ export default class Login extends Component{
     }
 
     handleSubmit(e){
-      var data = {}
-      data.email = this.state.username;
-      data.password = this.state.password;
-      Axios.post('http://ec2-54-91-147-129.compute-1.amazonaws.com/login/social', data).then(() => console.log("Logado com sucesso")).catch(() => alert("error"))
+      var data = {
+      'email': "admin@admin.com",
+      'password': "admin"
+      }
+      Axios.post('http://34.239.129.125/login/social', data, {
+        header: {"Content-Type": "application/json"}
+      })
+      .then(response => {
+        const token = response.data.content.token;
+        const role = response.data.content.role;
+        console.log(response.data)
+        sessionStorage.setItem("token", token);
+        sessionStorage.setItem("role", role);
+        document.location.reload (true);
+      })
+
       e.preventDefault();
     }
 
