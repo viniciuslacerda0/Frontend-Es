@@ -13,8 +13,6 @@ export default class Register extends Component{
         this.handleChangePassword = this.handleChangePassword.bind(this)
         this.handleChangeConfirmPassword = this.handleChangeConfirmPassword.bind(this)
         this.handleChangeEmail = this.handleChangeEmail.bind(this)
-        this.handleChangeDate = this.handleChangeDate.bind(this)
-        this.handleChangeGender = this.handleChangeGender.bind(this)
 
     }
 
@@ -22,11 +20,13 @@ export default class Register extends Component{
       var data = {}
       data.name = this.state.username;
       data.email = this.state.email;
-      data.gender = this.state.gender;
-      data.birth = this.state.date;
       data.password = this.state.password;
       data.checkedPassword = this.state.confirmPassword;
-      Axios.post('http://ec2-54-91-147-129.compute-1.amazonaws.com/signup/social', data).then(() => console.log("sucesso")).catch("error")
+      Axios.post('http://34.239.129.125/signup/social', data, {
+          header: {
+              'Content-Type': 'application/json'
+          }
+      }).then(() => console.log("sucesso")).catch("error")
 
       e.preventDefault();
 
@@ -48,15 +48,6 @@ export default class Register extends Component{
         this.setState({confirmPassword: e.target.value})
     }
 
-    handleChangeGender(e){
-      this.setState({gender: e.target.value})
-    }
-
-    handleChangeDate(e){
-      console.log(e.target.value)
-      this.setState({date: e.target.value})
-    }
-
     render(){
         return(
                 <div className='login'>
@@ -70,11 +61,7 @@ export default class Register extends Component{
                   <FormControl className="center" type="password" value={this.state.confirmPasswordpassword} onChange={this.handleChangeConfirmPassword}/>
                   <ControlLabel> Email </ControlLabel>
                   <FormControl className="center" type="email" value={this.state.email} onChange={this.handleChangeEmail}/>
-                  <ControlLabel> Data de nascimento </ControlLabel>
-                  <FormControl className="center" type="date" value={this.state.date} onChange={this.handleChangeDate}/>
-                  <ControlLabel> Genero </ControlLabel>
-                  <Radio name="radioGroup" defaultChecked value={"MALE"} onChange={this.handleChangeGender}> Masculino </Radio>
-                  <Radio name="radioGroup" value={"FEMALE"} onChange={this.handleChangeGender}> Feminino </Radio>
+                  <br />
                     <Button onClick={this.handleSubmit} className='btn btn-primary'>
                         Registrar
                         <i className='fa fa-check' style={{marginLeft: 12}}></i>
