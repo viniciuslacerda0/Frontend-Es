@@ -9,6 +9,8 @@ class Anime extends React.Component{
         name: this.props.data.name,
         genre: this.props.data.genre,
         resume: this.props.data.resume,
+        id: this.props.data._id,
+        thumb: this.props.data.thumb,
         input: false
       }
       this.deleteAnime = this.deleteAnime.bind(this);
@@ -20,8 +22,14 @@ class Anime extends React.Component{
     }
 
     deleteAnime(){
-      var anime = this.state.name;
-      Axios.delete('http://ec2-54-91-147-129.compute-1.amazonaws.com/animes/'+anime).then(() => console.log("sucesso")).catch(() => alert("error"))
+      var id = this.state.id;
+      var token = "";
+      Axios.delete('http://34.239.129.125/animes/'+id, {
+         headers: {
+           authorization: `Bearer ${token}`
+         }
+       }).then((res) => console.log(res.data))
+            .catch(() => alert("error"));
     }
 
     editAnime(){
@@ -29,13 +37,23 @@ class Anime extends React.Component{
     }
 
     edited(){
-      var data = {nome: this.state.nome, numEps: this.state.episodes};
-      Axios.put('', data).then(() => console.log("ok")).catch(() => alert("error"))
+      var data = {};
+      data.name = this.state.name;
+      data.genre = this.state.genre;
+      data.resume = this.state.resume;
+      data.thumb = this.state.thumb;
+      var id = this.state.id;
+      var token = "";
+      Axios.put('http://34.239.129.125/animes/'+id, data,
+      {
+         headers: {
+           authorization: `Bearer ${token}`
+         }
+       }).then(console.log("OK")).catch((res) => alert("error"))
       this.setState({input: false});
     }
 
     handleName(event){
-      console.log( event.target.value);
       this.setState({name: event.target.value})
     }
 

@@ -72,9 +72,7 @@ class NewAnime extends React.Component{
     return(
       <div>
         <Grid>
-          <Panel expanded={true}>
-            <Panel.Collapse>
-              <Panel.Body>
+          <div className="white">
                 <form onSubmit={this.handleSubmit}>
                   <FormGroup>
                     <ControlLabel>Nome do Anime</ControlLabel>
@@ -89,9 +87,7 @@ class NewAnime extends React.Component{
                   <Button type="submit" bsStyle="success">Submit</Button>
                   <a href="/admin"><Button bsStyle="info">Voltar</Button></a>
                 </form>
-              </Panel.Body>
-            </Panel.Collapse>
-          </Panel>
+              </div>
         </Grid>
       </div>
     )

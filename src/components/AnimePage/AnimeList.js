@@ -2,12 +2,13 @@ import React from 'react';
 import {Row, Col, Grid} from 'react-bootstrap';
 import '../Styles/styles.css'
 import Topo from '../Template/Topo'
-import ShowAnimes from '../AnimePage/ShowAnimes'
+import ShowAnimes from './ShowAnimes'
 import Propaganda from '../Template/Propaganda'
 import PageHeader from '../Template/PageHeader'
 import Pagination from '../Pagination/Pagination'
+import Axios from 'axios'
 
-export default class AnimeList extends Component {
+class AnimeList extends React.Component {
 
 	constructor(props){
 		super(props);
@@ -16,11 +17,14 @@ export default class AnimeList extends Component {
         {name: "dragon ball",  thumb: "https://i.kym-cdn.com/photos/images/newsfeed/001/155/275/559.gif" },
         {name: "fulmmetal", thumb: "https://i.kym-cdn.com/photos/images/newsfeed/001/155/275/559.gif" },
         {name: "fulmmetal", thumb: "https://i.kym-cdn.com/photos/images/newsfeed/001/155/275/559.gif" },
-        {name: "fulmmetal", thumb: "https://i.kym-cdn.com/photos/images/newsfeed/001/155/275/559.gif" },]
+        {name: "fulmmetal", thumb: "https://i.kym-cdn.com/photos/images/newsfeed/001/155/275/559.gif" }]
 
         this.onChangePage = this.onChangePage.bind(this);
 
-         this.state = { list: [], pageOfItems: [], exampleItems: listAnimes }
+    this.state = { list: [], pageOfItems: listAnimes, exampleItems: listAnimes }
+
+		Axios.get('http://34.239.129.125/animes').then(response => response.data.content.animes).then(res => this.setState({pageOfItems: res}));
+
 
 	}
 
@@ -35,7 +39,7 @@ export default class AnimeList extends Component {
 			<Topo/>
 				<Propaganda/>
 				<div className='container todo'>
-				
+
 			<Grid >
 				<Col md={9}>
 					<Row>
@@ -55,3 +59,4 @@ export default class AnimeList extends Component {
 
 }
 
+export default AnimeList

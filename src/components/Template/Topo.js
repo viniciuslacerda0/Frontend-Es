@@ -40,7 +40,7 @@ export default class Topo extends Component {
                         <div className='navbar-collapse collapse'>
                             <ul className="nav navbar-nav">
                                 <li><a href="/">HOME</a></li>
-                                <li><a href="/showanimes">ANIMES</a></li>
+                                <li><a href="/animes">ANIMES</a></li>
                                 <li><a href="/generos">GÊNEROS</a></li>
                                 <li><a href="/contato">CONTATO</a></li>
                                 {this.state.role === "Admin" ? <li><a href="/admin" style={{color: "white", cursor: "pointer"}}>UPLOAD</a></li> : null}
