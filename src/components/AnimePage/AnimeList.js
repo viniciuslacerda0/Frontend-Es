@@ -36,7 +36,6 @@ class AnimeList extends React.Component {
 	render() {
 		return(
 		<div>
-			<Topo/>
 				<Propaganda/>
 				<div className='container todo'>
 

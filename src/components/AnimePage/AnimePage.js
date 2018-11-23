@@ -32,7 +32,6 @@ export default class AnimePage extends Component {
 	render() {
 		return(
 		<div>
-			<Topo/>
 				<Propaganda/>
 				<div className='container todo'>
 				
