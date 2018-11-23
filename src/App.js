@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import {Route} from 'react-router-dom';
+import Topo from './components/Template/Topo';
 import FrontPage from './components/FrontPage/FrontPage'
 import Admin from './components/Admin/Admin';
 import Upload from './components/Upload/Upload'

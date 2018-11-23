@@ -8,15 +8,15 @@ export default class Login extends Component{
     constructor(props){
         super(props)
 
-        this.state = {username: '', password: ''}
+        this.state = {email: '', password: ''}
 
-        this.handleChangeUsername = this.handleChangeUsername.bind(this);
+        this.handleChangeEmail = this.handleChangeEmail.bind(this);
         this.handleChangePassword = this.handleChangePassword.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChangeUsername(e){
-        this.setState({username: e.target.value})
+    handleChangeEmail(e){
+        this.setState({email: e.target.value})
     }
 
     handleChangePassword(e){
@@ -25,9 +25,20 @@ export default class Login extends Component{
 
     handleSubmit(e){
       var data = {}
-      data.email = this.state.username;
+      data.email = this.state.email;
       data.password = this.state.password;
-      Axios.post('http://ec2-54-91-147-129.compute-1.amazonaws.com/login/social', data).then(() => console.log("Logado com sucesso")).catch(() => alert("error"))
+      Axios.post('http://34.239.129.125/login/social', data, {
+        header: {"Content-Type": "application/json"}
+      })
+      .then(response => {
+        const token = response.data.content.token;
+        const role = response.data.content.role;
+        console.log(response.data)
+        sessionStorage.setItem("token", token);
+        sessionStorage.setItem("role", role);
+        document.location.reload (true);
+      }).catch(() => alert("error"))
+
       e.preventDefault();
     }
 
@@ -36,8 +47,8 @@ export default class Login extends Component{
                 <div className='login'>
                   <form onSubmit={this.handleSubmit}>
                     <FormGroup>
-                    <ControlLabel> Usuário </ControlLabel>
-                    <FormControl className="center" type="email" value={this.state.username} onChange={this.handleChangeUsername}/>
+                    <ControlLabel> Email </ControlLabel>
+                    <FormControl className="center" type="email" value={this.state.email} onChange={this.handleChangeEmail}/>
                     <ControlLabel> Senha </ControlLabel>
                     <FormControl className="center" type="password" value={this.state.password} onChange={this.handleChangePassword}/>
                     <br/>
