@@ -39,7 +39,7 @@ export default class AnimePage extends Component {
 				<Col md={9}>
 					<Row>
 					        <Anime list={this.state.pageOfItems}/>
-                                                <Pagination items={this.state.exampleItems} onChangePage={this.onChangePage}/>
+                            <Pagination items={this.state.exampleItems} onChangePage={this.onChangePage}/>
 					</Row>
 				</Col>
 				<Col md={3}>

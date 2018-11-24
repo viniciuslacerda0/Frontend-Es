@@ -14,7 +14,7 @@ export default class Animes extends Component {
                     <div className ="nome-thumb">
                         <a className="tt" href={'/' + anime.name} title={anime.name}> {anime.name}</a>
                         <a href={'/' + anime.name} title={anime.name} className="thumb">
-                        <img src={anime.thumb} alt = "" className="img-full"/>
+                        <img src={anime.thumb_url} alt = "" className="img-full"/>
                         <span className="num-episodio">epi{anime.episode}</span>
                         </a>    
                     </div>

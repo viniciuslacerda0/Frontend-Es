@@ -34,3 +34,8 @@ input{
 .form-control {
   width: 90% !important;
 }
+
+.adminBoard {
+  margin-top: 100px;
+  text-align: center;
+}
