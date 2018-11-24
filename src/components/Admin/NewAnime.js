@@ -1,7 +1,8 @@
 import React from 'react';
 import Axios from 'axios';
 import '../Styles/styles.css'
-import {Glyphicon, Button, Panel, FormGroup, ControlLabel, FormControl, Grid} from 'react-bootstrap'
+import PageHeader from '../Template/PageHeader'
+import {Glyphicon, Button, Panel, FormGroup, ControlLabel, FormControl, Grid, Form} from 'react-bootstrap'
 
 
 class NewAnime extends React.Component{
@@ -56,7 +57,7 @@ class NewAnime extends React.Component{
 
     const url = 'http://34.239.129.125/'
     // var token = (colocar o token aqui)
-    var token = ""
+    var token = sessionStorage.getItem("token");
     Axios.post(url + 'animes', data,
     { headers: {
       authorization: `Bearer ${token}`,
@@ -73,21 +74,22 @@ class NewAnime extends React.Component{
       <div>
         <Grid>
           <div className="white">
-                <form onSubmit={this.handleSubmit}>
+                <PageHeader name="Novo Anime"/>
+                <Form className="form" onSubmit={this.handleSubmit}>
                   <FormGroup>
                     <ControlLabel>Nome do Anime</ControlLabel>
-                    <FormControl type="text" value={this.state.name} onChange={this.handleChangeName}/>
+                    <FormControl type="text" value={this.state.name} onChange={this.handleChangeName}/><p/>
                     <ControlLabel>Genero principal</ControlLabel>
-                    <FormControl type="text" value={this.state.genre} onChange={this.handleChangeGenre}/>
+                    <FormControl type="text" value={this.state.genre} onChange={this.handleChangeGenre}/><p/>
                     <ControlLabel>Descrição</ControlLabel>
-                    <FormControl componentClass="textarea" value={this.state.resume} onChange={this.handleChangeResume}/>
+                    <FormControl componentClass="textarea" value={this.state.resume} onChange={this.handleChangeResume}/><p/>
                     <ControlLabel>Thumb</ControlLabel>
-                    <FormControl type="file" onChange={this.handleFile}/>
+                    <FormControl type="file" onChange={this.handleFile}/><p/>
                   </FormGroup>
                   <Button type="submit" bsStyle="success">Submit</Button>
                   <a href="/admin"><Button bsStyle="info">Voltar</Button></a>
-                </form>
-              </div>
+                </Form>
+          </div>
         </Grid>
       </div>
     )

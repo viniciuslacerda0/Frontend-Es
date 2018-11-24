@@ -1,7 +1,8 @@
 import React from 'react';
 import Axios from 'axios';
 import '../Styles/styles.css'
-import {Glyphicon, Button, Panel, FormGroup, ControlLabel, FormControl, Grid} from 'react-bootstrap'
+import PageHeader from '../Template/PageHeader'
+import {Form, Glyphicon, Button, Panel, FormGroup, ControlLabel, FormControl, Grid} from 'react-bootstrap'
 
 
 class NewEpisode extends React.Component{
@@ -12,7 +13,7 @@ class NewEpisode extends React.Component{
           name: "",
           chapter:0,
           description: "",
-          animeName: "",
+          search: "",
       }
 
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,7 +29,7 @@ class NewEpisode extends React.Component{
   }
 
   handleChangeAnimeName(event){
-    this.setState({animeName: event.target.value});
+    this.setState({search: event.target.value});
   }
 
   handleChangeChapter(event){
@@ -59,11 +60,11 @@ class NewEpisode extends React.Component{
     data.chapter = this.state.chapter;
     data.description = this.state.description;
     var token = "";
-    Axios.post('http://34.239.129.125/animes/'+this.animeName+"/episodes", data, {
+    Axios.post('http://34.239.129.125/animes/'+this.search+"/episodes", data, {
        headers: {
          authorization: `Bearer ${token}`
        }
-     }).then(response => console.log(response.data)).catch(alert("error"));
+     }).then(response => console.log(response.data))
     event.preventDefault();
   }
 
@@ -72,22 +73,24 @@ class NewEpisode extends React.Component{
       <div>
         <Grid>
           <div className="white">
-                <form onSubmit={this.handleSubmit}>
+                <PageHeader name="Adicionar um episódio"/>
+                <Form onSubmit={this.handleSubmit}>
                   <FormGroup>
-                    <ControlLabel>Selecione o Anime:</ControlLabel>
-                    <FormControl type="text" value={this.state.animeName} onChange={this.handleChangeAnimeName}/>
-                    <ControlLabel>Número do episódio:</ControlLabel>
-                    <FormControl type="number" value={this.state.chapter} onChange={this.handleChangeChapter}/>
-                    <ControlLabel>Nome do episódio:</ControlLabel>
-                    <FormControl type="text" value={this.state.name} onChange={this.handleChangeName}/>
-                    <ControlLabel>Descrição:</ControlLabel>
-                    <FormControl componentClass="textarea" value={this.state.description} onChange={this.handleChangeDescription}/>
-                    <ControlLabel>Arquivo</ControlLabel>
-                    <FormControl type="file" onChange={this.handleFile}/>
-                  </FormGroup>
-                  <Button type="submit" bsStyle="success">Filtrar</Button>
-                  <a href="/admin"><Button bsStyle="info">Voltar</Button></a>
-                </form>
+                    <ControlLabel>Digite o nome do anime:</ControlLabel>
+                    <FormControl type="text" value={this.state.search} onChange={this.handleChangeAnimeName}/></FormGroup><p/>
+                    <Button type="submit" bsStyle="success">Procurar</Button>
+
+                    {!this.state.name == "" ? (<div><ControlLabel>Número do episódio:</ControlLabel>
+                                                            <FormControl type="number" value={this.state.chapter} onChange={this.handleChangeChapter}/><p/>
+                                                            <ControlLabel>Nome do episódio:</ControlLabel>
+                                                            <FormControl type="text" value={this.state.name} onChange={this.handleChangeName}/><p/>
+                                                            <ControlLabel>Descrição:</ControlLabel>
+                                                            <FormControl componentClass="textarea" value={this.state.description} onChange={this.handleChangeDescription}/><p/>
+                                                            <ControlLabel>Arquivo</ControlLabel>
+                                                            <FormControl type="file" onChange={this.handleFile}/><p/>
+                                                            <Button type="submit" bsStyle="success">Filtrar</Button>
+                                                            <a href="/admin"><Button bsStyle="info">Voltar</Button></a></div>) : null}
+                </Form>
           </div>
         </Grid>
       </div>
