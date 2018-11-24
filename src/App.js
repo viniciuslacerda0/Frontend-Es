@@ -54,6 +54,7 @@ class App extends Component {
   render() {
     return(
               <div className="App">
+                    <Topo/>
                     <Route exact path='/' component={FrontPage}/>
                     <Route  path='/generos/:id' component={Genre}/>
                     <Route exact path='/generos' component={GenresPage}/>
@@ -63,6 +64,7 @@ class App extends Component {
                     <Route exact path="/admin/adicionar_episodios" component={NewEpisode}/>
                     <Route exact path="/admin/editar_anime" component={EditAnime}/>
                     <Route exact path="/admin/editar_episodios" component={EditAnime}/>
+                    <Route exact path="/video" component={WatchingPage}/>
               </div>
             );
   }

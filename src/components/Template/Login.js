@@ -44,7 +44,7 @@ export default class Login extends Component{
 
     render(){
         return(
-                <div className='login'>
+                <div className='animated bounceInDown login'>
                   <form onSubmit={this.handleSubmit}>
                     <FormGroup>
                     <ControlLabel> Email </ControlLabel>

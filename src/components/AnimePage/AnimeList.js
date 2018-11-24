@@ -36,23 +36,18 @@ class AnimeList extends React.Component {
 	render() {
 		return(
 		<div>
-			<Topo/>
-				<Propaganda/>
-				<div className='container todo'>
-
-			<Grid >
-				<Col md={9}>
-					<Row>
-					    <ShowAnimes list={this.state.pageOfItems}/>
-                        <Pagination items={this.state.exampleItems} onChangePage={this.onChangePage}/>
-					</Row>
-				</Col>
-				<Col md={3}>
-					<PageHeader name='Top anime'/>
-				</Col>
-			</Grid>
+			<Propaganda/>
+			<div className='container todo'>
+				<Grid >
+					<Col md={12}>
+						<Row>
+						    <ShowAnimes list={this.state.pageOfItems}/>
+                    	    <Pagination items={this.state.exampleItems} onChangePage={this.onChangePage}/>
+						</Row>
+					</Col>
+				</Grid>
 			</div>
-			</div>
+		</div>
 		)
 	}
 

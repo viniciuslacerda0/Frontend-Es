@@ -17,16 +17,16 @@ export default class Register extends Component{
     }
 
     handleSubmit(e){
-      var data = {}
-      data.name = this.state.username;
-      data.email = this.state.email;
-      data.password = this.state.password;
-      data.checkedPassword = this.state.confirmPassword;
+      var data = new FormData();
+      data.set('name', "ramon");
+      data.set('email', "ramon@gmail.com");
+      data.set('password', "ramonramon");
+      data.set('checkedPassword', "ramonramon");
       Axios.post('http://34.239.129.125/signup/social', data, {
           header: {
               'Content-Type': 'application/json'
           }
-      }).then(() => console.log("sucesso")).catch("error")
+      }).then(res => console.log(res))
 
       e.preventDefault();
 
@@ -50,7 +50,7 @@ export default class Register extends Component{
 
     render(){
         return(
-                <div className='login'>
+                <div className='animated bounceInDown login'>
                   <form onSubmit={this.handleSubmit}>
                   <FormGroup>
                   <ControlLabel> Nome do usuário </ControlLabel>

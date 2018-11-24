@@ -1,49 +1,68 @@
 import React from 'react';
 import '../../App.css'
 import '../../reset.css'
+import {Grid, Col} from 'react-bootstrap';
+import PageHeader from '../Template/PageHeader';
+import AnimeBox from './AnimeBox';
+
 import Axios from 'axios'
 
 class ShowAnimes extends React.Component{
 
   constructor(props){
     super(props)
-    this.state = {list:[]}
-    this.renderAllAnimes = this.renderAllAnimes.bind(this);
-    Axios.get('http://34.239.129.125/animes').then(response => response.data.content.animes).then(res => this.setState({list: res}));
-
+    this.state = {
+      animes:[],
+      size: 0
+    }
   }
 
-  renderAllAnimes = () => {
-    const list = this.state.list
-    return list.map( anime =>
-       <div class='box-detalhes-animes'>
-             <header class='top-padrao full-hidden'>
-              <h2 class='tt-padrao'>
-                <a href={'/' + anime.name}>{anime.name}</a>
-              </h2>
-            </header>
-            <div class='content full-hidden'>
-              <div class='content full-hidden'>
-                <div class='col-thumb'>
-                  <a href={'/' + anime.name} title={anime.name} class="thumb">
-                        <img src={anime.thumb.url} target='_blank' alt = {anime.name + ' Online'} class="img-responsive"/>
-                  </a>
-                </div>
-              </div>
-            </div>
-           </div>
-    )
+  componentDidMount() {
+    Axios.get('http://34.239.129.125/animes')
+    .then(response => this.setState({animes:response.data.content.animesDb}))
+    .then(res => this.setState({size: Math.ceil(this.state.animes.length/6)}))
   }
 
   render() {
+    const animes = this.state.animes;
+    const size = this.state.size;
+
     return(
       <div>
-        <div class='container'>
-          <div class='galeria-animes'>
-            {this.renderAllAnimes()}
-          </div>
-        </div>
+        <PageHeader name="Animes"/>
+        <Grid style={{"textAlign":"center"}}>
+          
+          <Col md={2}>              
+          {animes.map((a, index) => { 
+                if(index < size){return(<AnimeBox name={a.name} thumb={a.thumb_url}/>)}
+          })}</Col>
+          
+          <Col md={2}>              
+          {animes.map((a, index) => {
+                if(index >= size && index < size*2){return(<AnimeBox name={a.name} thumb={a.thumb_url}/>)}
+          })}</Col>
+          
+          <Col md={2}>              
+          {animes.map((a, index) => {
+                if(index >= size*2 && index < size*3){return(<AnimeBox name={a.name} thumb={a.thumb_url}/>)}
+          })}</Col>
+          
+          <Col md={2}>              
+          {animes.map((a, index) => {
+                if(index >= size*3 && index < size*4){return(<AnimeBox name={a.name} thumb={a.thumb_url}/>)}
+          })}</Col>
+          
+          <Col md={2}>              
+          {animes.map((a, index) => {
+                if(index >= size*4 && index < size*5){return(<AnimeBox name={a.name} thumb={a.thumb_url}/>)}
+          })}</Col>
+          
+          <Col md={2}>              
+          {animes.map((a, index) => {
+                if(index >= size*5 && index < size*6){return(<AnimeBox name={a.name} thumb={a.thumb_url}/>)}
+          })}</Col>
 
+        </Grid>
       </div>
 
     )

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Col, Grid, Row} from 'react-bootstrap';
 import VideoPlayer from './VideoPlayer';
 import OptionsBar from './OptionsBar';
+import Propaganda from '../Template/Propaganda';
 import SideBar from './SideBar';
 import './WatchingPage.css'
 
@@ -20,6 +21,7 @@ export default class WatchingPage extends Component {
 	render() {
 		return(
 			<div>
+				<Propaganda/>
 				<Grid>
 					<Col className="video" xs={12} md={9}>
 						<Row><VideoPlayer url={this.state.url} anime={this.state.anime} episodio={this.state.episodio}/></Row>

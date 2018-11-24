@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../../App.css';
 import '../../reset.css';
 export default class Animes extends Component {    
 
@@ -11,21 +10,21 @@ export default class Animes extends Component {
     renderAnimes = () => {
         const list = this.props.list;
         return list.map( anime => (
-                <div class="box-episodio hidden-xs">
-                    <div class ="nome-thumb">
-                        <a class="tt" href={'/' + anime.name} title={anime.name}> {anime.name}</a>
-                        <a href={'/' + anime.name} title={anime.name} class="thumb">
-                        <img src={anime.thumb} alt = "" class="img-full"/>
-                        <span class="num-episodio">epi{anime.episode}</span>
+                <div className="box-episodio hidden-xs">
+                    <div className ="nome-thumb">
+                        <a className="tt" href={'/' + anime.name} title={anime.name}> {anime.name}</a>
+                        <a href={'/' + anime.name} title={anime.name} className="thumb">
+                        <img src={anime.thumb_url} alt = "" className="img-full"/>
+                        <span className="num-episodio">epi{anime.episode}</span>
                         </a>    
                     </div>
-                    <div class="lista-servers">
-                        <div class="content-servers relative item1 1-versao atual esconder">
+                    <div className="lista-servers hvr-bob">
+                        <div className="content-servers relative item1 1-versao atual esconder">
                         <ul>
                             
                         </ul>
-                        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous"/>
-                        <a class="btn-online" href={'/' + anime.name + '/' + anime.episode} title="Assista">  <i class="fas fa-play-circle" ></i>
+                        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossOrigin="anonymous"/>
+                        <a className="btn-online" href={'/' + anime.name + '/' + anime.episode} title="Assista">  
                         Assista Online
                         </a> 
                     </div>   
@@ -38,12 +37,12 @@ export default class Animes extends Component {
     render() {
 	    return(
 		        <div>
-		            <div id="box-bottom" class="full-hidden">
-		                <div class='container'>
-		                    <div class='col-left left'>
-		                        <div class='info-destaque hidden-xs'>
-		                            <div class='content full-hidden'>
-		                                <div class="ultimos-episodios hidden-xs">
+		            <div id="box-bottom" className="full-hidden">
+		                <div className='container'>
+		                    <div className='col-left left'>
+		                        <div className='info-destaque hidden-xs'>
+		                            <div className='content full-hidden'>
+		                                <div className="ultimos-episodios hidden-xs">
 		                                    {this.renderAnimes()}
 		                                </div>
 		                            </div>
