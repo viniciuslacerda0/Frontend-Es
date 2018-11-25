@@ -26,7 +26,7 @@ export default class AnimePage extends Component {
 
 	onChangePage(pageOfItems){
                 this.setState({ pageOfItems: pageOfItems});
-        }
+    }
 
 
 	render() {
