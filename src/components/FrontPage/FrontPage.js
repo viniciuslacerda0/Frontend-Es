@@ -26,7 +26,7 @@ export default class FrontPage extends Component {
 
     componentDidMount() {
         Axios.get('http://34.239.129.125/animes')
-        .then(response => this.setState({listAnimes:response.data.content.animesDb}))
+        .then(response => this.setState({listAnimes:response.data.content.animes}))
         .then(response => this.setState({exampleItems: this.state.listAnimes}))
 
     }

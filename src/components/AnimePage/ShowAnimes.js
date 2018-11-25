@@ -19,7 +19,7 @@ class ShowAnimes extends React.Component{
 
   componentDidMount() {
     Axios.get('http://34.239.129.125/animes')
-    .then(response => this.setState({animes:response.data.content.animesDb}))
+    .then(response => this.setState({animes:response.data.content.animes}))
     .then(res => this.setState({size: Math.ceil(this.state.animes.length/6)}))
   }
 
