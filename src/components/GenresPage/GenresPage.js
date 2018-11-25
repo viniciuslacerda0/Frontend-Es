@@ -43,7 +43,7 @@ export default class GenresPage extends React.Component {
 					<Grid >
 					<Col md={9}>
 						<Row>
-							<PageHeader name="Categorias"/>
+							<PageHeader name="Gêneros"/>
 						</Row>
 						<main>
 							{this.state.genres.map(a => 

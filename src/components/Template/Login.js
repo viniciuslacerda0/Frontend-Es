@@ -32,8 +32,8 @@ export default class Login extends Component{
       })
       .then(response => {
         const token = response.data.content.token;
-        const role = response.data.content.role;
-        console.log(response.data)
+        const role = response.data.content.user.role;
+        console.log(response.data.content)
         sessionStorage.setItem("token", token);
         sessionStorage.setItem("role", role);
         document.location.reload (true);

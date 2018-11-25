@@ -21,6 +21,8 @@ class Anime extends React.Component{
       this.handleResume = this.handleResume.bind(this);
     }
 
+    componentDidMount
+
     deleteAnime(){
       var id = this.state.id;
       var token = "";
@@ -69,6 +71,9 @@ class Anime extends React.Component{
 
     render(){
         if(!this.state.input){
+          console.log(this.props.name)
+          console.log("kkkkkkkk")
+          console.log(this.state.name)
         return(
             <tr>
                 <td><p className="center">{this.state.name}</p></td>
