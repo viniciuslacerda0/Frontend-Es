@@ -56,15 +56,14 @@ class NewAnime extends React.Component{
     data.set('thumb', this.state.file);
 
     const url = 'http://34.239.129.125/'
-    // var token = (colocar o token aqui)
     var token = sessionStorage.getItem("token");
     Axios.post(url + 'animes', data,
     { headers: {
       authorization: `Bearer ${token}`,
       'content-type': 'multipart/form-data'
     }
-  }).then(response => console.log(response.data))
-        .catch(response => console.log(response.data));
+  }).then(() =>  document.location.reload (true))
+        .catch(() => alert("error"));
 
     event.preventDefault();
   }

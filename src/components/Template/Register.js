@@ -17,17 +17,12 @@ export default class Register extends Component{
     }
 
     handleSubmit(e){
-      var data = new FormData();
-      data.set('name', "ramon");
-      data.set('email', "ramon@gmail.com");
-      data.set('password', "ramonramon");
-      data.set('checkedPassword', "ramonramon");
-      Axios.post('http://34.239.129.125/signup/social', data, {
-          header: {
-              'Content-Type': 'application/json'
-          }
-      }).then(res => console.log(res))
-
+      var data = {};
+      data.name = this.state.username;
+      data.email = this.state.email;
+      data.password = this.state.password;
+      data.checkPassword = this.state.confirmPassword;
+      Axios.post('http://34.239.129.125/signup/social', data).then(res => console.log(res.data)).catch((res) => console.log(res.data))
       e.preventDefault();
 
     }
