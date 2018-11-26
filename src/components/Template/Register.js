@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Axios from 'axios'
-import {Button, FormGroup, ControlLabel, FormControl, Radio} from 'react-bootstrap'
+import {Button, FormGroup, ControlLabel, FormControl} from 'react-bootstrap'
 
 export default class Register extends Component{
     constructor(props){

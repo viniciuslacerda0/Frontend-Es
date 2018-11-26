@@ -1,8 +1,7 @@
 import React from 'react';
-import AnimeEpisodes from './AnimeEpisodes'
 import PageHeader from '../Template/PageHeader';
 import './admin.css'
-import {Grid, FormControl, Button, Form, FormGroup} from 'react-bootstrap';
+import {Grid} from 'react-bootstrap';
 import Axios from 'axios';
 import Episodes from './Episodes'
 

@@ -71,19 +71,6 @@ class Anime extends React.Component{
       this.setState({input: false});
     }
 
-    handleFile(event){
-      let reader = new FileReader();
-      let file = event.target.files[0];
-
-      reader.onloadend = () => {
-        this.setState({
-          file: file
-        });
-      }
-
-      reader.readAsDataURL(file)
-    }
-
     handleName(event){
       this.setState({name: event.target.value})
     }

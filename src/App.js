@@ -4,7 +4,6 @@ import {Route} from 'react-router-dom';
 import Topo from './components/Template/Topo';
 import FrontPage from './components/FrontPage/FrontPage'
 import Admin from './components/Admin/Admin';
-import Upload from './components/Upload/Upload'
 import WatchingPage from './components/WatchingPage/WatchingPage';
 import GenresPage from './components/GenresPage/GenresPage'
 import Genre from './components/GenresPage/Genre'

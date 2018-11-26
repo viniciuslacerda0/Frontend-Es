@@ -1,12 +1,11 @@
 import React from 'react';
 
 import {Grid, Col, Row} from 'react-bootstrap';
-import {Link, Route} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 import PageHeader from '../Template/PageHeader';
 import Propaganda from '../Template/Propaganda';
 import Topo from '../Template/Topo';
-import Genre from './Genre';
 import Axios from 'axios'
 import './GenresPage.css';
 
@@ -16,7 +15,7 @@ export default class GenresPage extends React.Component {
 		super(props);
 		this.state = {
 			genres : [
-				
+
 			]
 		}
 		Axios.get('http://34.239.129.125/animes/genres').then(res => this.setState({genres: res.data.content.genres})).catch(() => alert("error"));

@@ -1,11 +1,8 @@
 import React from 'react';
 import '../Styles/styles.css'
 import {Link} from 'react-router-dom';
-import {Grid, Row, Col} from 'react-bootstrap';
+import {Grid, Col} from 'react-bootstrap';
 import OptionBox from './OptionBox'
-import NewAnime from './NewAnime'
-import EditAnime from './EditAnime'
-import Anime from './Anime'
 const Admin = () => (
     <div className="adminBoard">
     	<Grid>

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Glyphicon, Button, Panel, FormGroup, ControlLabel, FormControl, Grid, Form} from 'react-bootstrap'
+import {Button, FormGroup, ControlLabel, FormControl, Grid, Form} from 'react-bootstrap'
 import PageHeader from '../Template/PageHeader'
 
 class Contact extends React.Component{

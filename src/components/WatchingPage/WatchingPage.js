@@ -6,10 +6,13 @@ import Propaganda from '../Template/Propaganda';
 import SideBar from './SideBar';
 import './WatchingPage.css'
 
-export default class WatchingPage extends Component {    
+export default class WatchingPage extends Component {
 
 	constructor(props) {
 		super(props);
+		this.state = {
+			
+		}
 	}
 
 	componentDidMount() {

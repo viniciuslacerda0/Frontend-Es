@@ -2,7 +2,7 @@ import React from 'react';
 import Axios from 'axios';
 import '../Styles/styles.css'
 import PageHeader from '../Template/PageHeader'
-import {Glyphicon, Button, Panel, FormGroup, ControlLabel, FormControl, Grid, Form} from 'react-bootstrap'
+import {Button, FormGroup, ControlLabel, FormControl, Grid, Form} from 'react-bootstrap'
 
 
 class NewAnime extends React.Component{

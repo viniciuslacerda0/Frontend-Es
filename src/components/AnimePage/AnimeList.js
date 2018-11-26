@@ -1,10 +1,8 @@
 import React from 'react';
 import {Row, Col, Grid} from 'react-bootstrap';
 import '../Styles/styles.css'
-import Topo from '../Template/Topo'
 import ShowAnimes from './ShowAnimes'
 import Propaganda from '../Template/Propaganda'
-import PageHeader from '../Template/PageHeader'
 import Pagination from '../Pagination/Pagination'
 import Axios from 'axios'
 

@@ -3,7 +3,7 @@ import Axios from 'axios';
 import '../Styles/styles.css'
 import './admin.css'
 import PageHeader from '../Template/PageHeader'
-import {Modal, Form, Glyphicon, Button, Panel, FormGroup, ControlLabel, FormControl, Grid, Col} from 'react-bootstrap'
+import {Modal, Form, Button, FormGroup, ControlLabel, FormControl, Grid} from 'react-bootstrap'
 
 
 class NewEpisode extends React.Component{
@@ -68,7 +68,6 @@ class NewEpisode extends React.Component{
 
 
   openForm(e) {
-    console.log(e);
     this.setState({enableForm:true})
     this.setState({animeId:e.id})
     this.setState({animeName:e.name})
@@ -81,7 +80,6 @@ class NewEpisode extends React.Component{
     data.set('name', this.state.name);
     data.set('chapter', this.state.chapter);
     data.set('description', this.state.description);
-    console.log(this.state.animeId)
     var token = sessionStorage.getItem('token');
 
     Axios.post('http://34.239.129.125/animes/'+this.state.animeId+"/episodes", data, {
@@ -89,9 +87,9 @@ class NewEpisode extends React.Component{
         authorization: `Bearer ${token}`,
         "Content-Type": "multipart/form-data"
       }
-    }).then(response => {
-      console.log("sucess")
-    })
+    }).then(response =>
+      document.location.reload(true)
+    ).catch(() => alert("error"))
     event.preventDefault();
   }
 

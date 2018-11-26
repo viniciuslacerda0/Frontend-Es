@@ -1,14 +1,13 @@
 import React from 'react';
 import '../../App.css'
 import '../../reset.css'
-import Propaganda from '../Template/Propaganda';
 import PageHeader from '../Template/PageHeader';
 import {Grid, Col} from 'react-bootstrap'
 import {Link} from 'react-router-dom';
 import Axios from 'axios';
 
 class Anime extends React.Component {
-    
+
     constructor(props){
         super(props);
         this.state = {
@@ -43,15 +42,15 @@ class Anime extends React.Component {
 
     renderAnimeEpisodes = () => {
         const list = this.state.episodes;
-        
+
         return list.map( episodes => (
 
             <nav class='nav-episodios pgn-anime full-hidden'>
-                <Link   className="genreBox" 
-                to={{ 
+                <Link   className="genreBox"
+                to={{
                     pathname: `/video/${episodes.id}`,
                     state: { url: episodes.video_url, animeName: this.state.animeName, epName: episodes.name}
-                }}> 
+                }}>
                     <ul>
                         <li>
                             <a>
@@ -64,8 +63,8 @@ class Anime extends React.Component {
             </nav>
          ));
     }
-    
-    
+
+
     render(){
         return(
             <main id='content-site'>
@@ -79,7 +78,7 @@ class Anime extends React.Component {
                                 </header>
                                 <div class='content full-hidden'>
                                     <Col md={9}>
-                                        <div class='thumb'> 
+                                        <div class='thumb'>
                                             <img src={this.state.thumb} title={this.state.animeName} alt={this.state.animeName} class='img-responsive'/>
                                         </div>
                                     </Col>
@@ -119,4 +118,3 @@ class Anime extends React.Component {
 }
 
 export default Anime;
-

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {Row, Col, Grid} from 'react-bootstrap';
 import Axios from 'axios';
 import Animes from './Animes'
-import Topo from '../Template/Topo'
 import TopAnimes from '../Template/TopAnimes'
 import Propaganda from '../Template/Propaganda'
 import PageHeader from '../Template/PageHeader'
@@ -12,10 +11,10 @@ export default class FrontPage extends Component {
 
 	constructor(props){
 		super(props);
-        this.state = { 
-            listAnimes: [], 
-            pageOfItems: [], 
-            exampleItems: [] 
+        this.state = {
+            listAnimes: [],
+            pageOfItems: [],
+            exampleItems: []
         }
         this.onChangePage = this.onChangePage.bind(this);
 	}
@@ -35,7 +34,7 @@ export default class FrontPage extends Component {
 		<div>
 				<Propaganda/>
 				<div className='container todo'>
-				
+
 			<Grid >
 				<Col md={9}>
 					<Row>
