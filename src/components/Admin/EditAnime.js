@@ -10,6 +10,7 @@ class Animes extends React.Component {
       super(props);
       this.state = {
           data: [],
+          searchResults: [],
           search: "",
           change: false,
     }
@@ -17,6 +18,10 @@ class Animes extends React.Component {
     this.handleChangeAnimeName = this.handleChangeAnimeName.bind(this);
   }
 
+  componentDidMount() {
+        Axios.get("http://34.239.129.125/animes")
+    .then(response => this.setState({searchResults:response.data.content.animes}))
+  }
 
   handleChangeAnimeName(event){
     this.setState({search: event.target.value});
@@ -25,7 +30,8 @@ class Animes extends React.Component {
 
   search() {
     Axios.get("http://34.239.129.125/animes?search=" + this.state.search)
-    .then(response => this.setState({data:response.data.content.animes}))
+    .then(response => this.setState({searchResults:response.data.content.animes}))
+    .then(res => console.log(this.state.searchResults))
     .then(res => this.setState({change:true}))
   }
 
@@ -49,7 +55,7 @@ class Animes extends React.Component {
                 </Form>
 
               </div>
-              <PageHeader name="Todos os Animes Cadastrados:"/>
+              {this.state.change ? null : <PageHeader name="Todos os Animes Cadastrados:"/> }
               <table className="table">
                   <tbody>
 
@@ -57,10 +63,11 @@ class Animes extends React.Component {
                         <td><p className="center"><strong>Nome</strong></p></td>
                         <td><p className="center"><strong>Gênero</strong></p></td>
                         <td><p className="center"><strong>Descrição</strong></p></td>
+                        <td><p className="center"><strong>Thumb</strong></p></td>
                         <td><p className="center"><strong>Apagar</strong></p></td>
                         <td><p className="center"><strong>Editar</strong></p></td>
                       </tr>
-                      {this.state.change ? this.state.data.map((anime) => <Anime data={anime} />) : null}
+                      {this.state.searchResults.map((anime) => <Anime data={anime} />)}
                   </tbody>
               </table>
             </Grid>

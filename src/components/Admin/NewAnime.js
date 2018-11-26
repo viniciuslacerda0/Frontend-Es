@@ -37,7 +37,6 @@ class NewAnime extends React.Component{
   handleFile(event){
     let reader = new FileReader();
     let file = event.target.files[0];
-
     reader.onloadend = () => {
       this.setState({
         file: file
