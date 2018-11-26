@@ -13,6 +13,7 @@ import NewEpisode from './components/Admin/NewEpisode'
 import EditAnime from './components/Admin/EditAnime'
 import AnimeList from './components/AnimePage/AnimeList'
 import Contact from './components/Contact/Contact'
+import Anime from'./components/AnimePage/Anime';
 
 const URL = 'url do api';
 
@@ -66,7 +67,8 @@ class App extends Component {
                     <Route exact path="/admin/adicionar_episodios" component={NewEpisode}/>
                     <Route exact path="/admin/editar_anime" component={EditAnime}/>
                     <Route exact path="/admin/editar_episodios" component={EditAnime}/>
-                    <Route exact path="/video" component={WatchingPage}/>
+                    <Route exact path="/video/:id" component={WatchingPage}/>
+                    <Route exact path="/anime/:id" component={Anime}/>
               </div>
             );
   }
