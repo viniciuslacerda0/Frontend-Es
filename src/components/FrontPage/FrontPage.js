@@ -47,7 +47,7 @@ export default class FrontPage extends Component {
 				</Col>
 				<Col md={3}>
 					<PageHeader name='Top animes'/>
-                    <TopAnimes/>
+                    <TopAnimes list={this.state.pageOfItems}/>
 				</Col>
 			</Grid>
 			</div>

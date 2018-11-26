@@ -15,6 +15,7 @@ import Contact from './components/Contact/Contact'
 import Anime from'./components/AnimePage/Anime';
 import EditEpisodes from './components/Admin/EditEpisodes'
 import DeleteAnimeEpisodes from './components/Admin/DeleteAnimeEpisodes'
+import SearchAnimes from './components/Template/searchAnimes'
 
 const URL = 'url do api';
 
@@ -66,6 +67,7 @@ class App extends Component {
                       <Route exact path='/admin' component={Admin}/>
                     }
                     <Route exact path='/contato' component={Contact}/>
+                    <Route exact path='/pesquisado' component={SearchAnimes}/>
                     <Route exact path="/video/:id" component={WatchingPage}/>
                     <Route exact path="/anime/:id" component={Anime}/>
                     {this.state.role === 'Admin' &&

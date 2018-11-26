@@ -2,6 +2,7 @@ import React from 'react';
 import './GenresPage.css'
 import {Thumbnail} from 'react-bootstrap';
 import Axios from 'axios'
+import {Link} from 'react-router-dom';
 
 export default class AnimeByGenreBox extends React.Component {
 	constructor(props){
@@ -14,6 +15,9 @@ export default class AnimeByGenreBox extends React.Component {
 
 	render() {
 		return (
+			<Link to={{pathname: `/anime/${this.props.nome}`,
+					  state: {id:this.props.id}
+			}}>
 			<div>
 				<Thumbnail >
 				<img className="animeBoxImg" src={this.props.thumb} />
@@ -21,6 +25,7 @@ export default class AnimeByGenreBox extends React.Component {
 				<small>{this.state.episodes} episódios</small>
 				</Thumbnail>
 			</div>
+			</Link>
 		)
 	}
 

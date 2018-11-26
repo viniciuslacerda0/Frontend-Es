@@ -1,15 +1,23 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
+
 
 export default props => {
 
     const listRows = () => {
-        const list = [1,2,3,3,4,4,4,4,4,4,4,4,4]
+        const list = props.list
         return list.slice(0, 10).map(anime => (
+            <Link to={{
+                pathname:`/anime/${anime.name}`,
+                state: {id:anime.id}
+            }}
+            >
                 <tr key={anime._id}  id="topAnimes" className="list-group-item">
-                    <a href="/">
-                        {anime.description}
+                    <a href={"/anime/"+anime.name} >
+                        {anime.name}
                     </a>
                 </tr>
+            </Link>
         ))
     }
 
