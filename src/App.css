@@ -213,13 +213,12 @@ input[type="submit"] {
 .top-padrao {
 	background-color: #c4c3c3;
 	padding: 15px 20px;
-	border-radius: 7px 7px 0 0;
+	border-radius: 3px 3px 0 0;
 }
 
 .tt-padrao {
-	font: 20px 'gothBold';
-	color: #fff;
-	display: block;
+	font: 20px moon;
+	color: black;
 }
 
 #galeria-animes {
@@ -240,7 +239,7 @@ input[type="submit"] {
 }
 
 .col-thumb {
-  width: 230px;
+  width: 500px;
   float: left;
 }
 
@@ -249,30 +248,7 @@ input[type="submit"] {
 	display: block;
 }
 
-.col-thumb .compartilhar,
-.col-detalhes .compartilhar {
-	border: 1px solid #b4b4b4;
-	padding: 8px 10px;
-	margin: 13px 0 0;
-	border-radius: 7px;
-}
 
-
-.box-detalhes-animes .box-avaliacoes {
-  width: 200px;
-  float: left;
-  padding: 0 0 5px;
-}
-
-.box-detalhes-animes .box-avaliacoes strong{
-  font: 18px 'latoHeavy';
-  color: #DA2657;
-  margin-left: 5px;
-}
-
-.box-detalhes-animes .box-avaliacoes .thumb{
-  display: block;
-}
 
 /* ===== PÃGINA DO ANIME ===== */
 #galeria-animes.pgn-anime {
@@ -285,187 +261,24 @@ input[type="submit"] {
 }
 
 .box-detalhes-animes.pgn-anime .col-detalhes {
-	width: 540px;
+	width:800px;
 }
 
 .box-detalhes-animes.pgn-anime .descricao {
 	height: 86px; 
 }
 
-.box-detalhes-animes.pgn-anime .ver-mais {
-	font-weight: bold;
-	font-size: 12px;
-	color: #606060;
-	cursor: pointer;
-}
-
-.box-detalhes-animes .info2 {
-	border-top: 1px solid #d8d8d8;
-	margin: 10px 0;
-	padding: 10px 0 5px;
-}
-
-.box-detalhes-animes .info2 p b {
-	font-weight: bold;
-}
-
-.box-detalhes-animes.pgn-anime .row-avaliacao {
-	margin: 0 0 15px;
-}
-
-
-
-
-
-
-
-
-
-.col-logo-server {
-	background-color: #fff;
-	width: 130px;
-	height: 100%;
-	padding: 20px 10px;
-	float: left;
-	border-radius: 7px;
-}
-
-.col-lista-episodios {
-	width: 630px;
-	float: right;
-}
-
-.col-lista-episodios nav {
-	overflow-y: auto;
-	overflow-x: hidden !important;
-	height: 170px;
-}
-
-.col-lista-episodios ul {
-	margin: 0 !important;
-}
-
-.col-lista-episodios li {
-	width: calc(100%/6);
-	float: left;
-	padding: 0 4px;
-	margin: 0 0 6px;
-}
-
-.col-lista-episodios li a {
-	display: block;
-	background: #488311 linear-gradient(to bottom, #69bf19, #488311);
-	height: 37px;
-	font: 16px 'gothBold';
-	color: #fff;
-	text-align: center;
-	padding: 8px 0 0;
-	border-radius: 7px;
-}
-
-.btn-listar-todos {
-	
-	background: #07a7bb linear-gradient(to bottom, #22c9de, #07a7bb);
-	padding: 8px 15px;
-	margin: 10px 0 0;
-	font: 16px 'gothBold';
-	color: #fff;
-	float: right;
-	border-radius: 7px;
-}
-
-.btn-listar-todos:hover {
-	background: #22c9de linear-gradient(to bottom, #07a7bb, #22c9de);
-	text-decoration: none;
-}
-
-.col-episodios {
-  width: 100%;
-  background-color:#151719;
-  border-radius: 7px;
-  margin:40px 0;
-}
 
 /* ===== PÃGINA SINGLE EPISÃ“DIOS ONLINE ===== */
-.lista-qualidade.pgn-interna-episodio .titulo {
-	float: left !important;
-}
-
-.acessar-pgn {
-	background-color: #f18d18;
-	display: block;
-	padding: 10px;
-	font: 13px 'gothRoman';
-	color: #fff;
-	overflow: hidden;
-	border-radius: 7px;
-}
-
-.acessar-pgn .thumb {
-	display: block;
-	float: left;
-	width: 38px;
-	height: 57px;
-	margin: 0 14px 0 0;
-}
-
-.acessar-pgn .texto {
-	display: block;
-	margin: 5px 0 0;
-}
-
-.acessar-pgn b {
-	font: 30px/33px 'gothBold';
-	color: #fffc00;
-	display: block;
-}
-
-.acessar-pgn:hover {
-	background-color: #dc7700;
-	text-decoration: none;
-}
-
 .lista-episodios-relacionados {
 	background-color: #fff;
 	padding: 15px;
-	margin: 30px 0 0;
-	border-radius: 7px;
-}
-
-.btn-nav-episodios {
-	display: inline-block;
-	border: 1px solid #dadada;
-	padding: 10px 12px;
-	font: 14px 'gothBold';
-	color: #abaaaa;
-	border-radius: 7px;
-}
-
-.btn-nav-episodios:hover {
-	background-color: #abaaaa;
-	color: #fff;
-	text-decoration: none;
 }
 
 .nav-episodios {
-	height: 50%;
 	overflow-y: auto;
 	margin: 12px 0 0;
-}
-
-.nav-episodios * {
-	display: block;
-}
-
-.nav-episodios a {
-	border-top: 1px solid #e3e3e3;
-	padding: 8px;
-	overflow: hidden;
-	text-align: left;
-}
-
-.nav-episodios li:last-child a {
-	border-bottom: 1px solid #e3e3e3;
+	float: center;
 }
 
 .nav-episodios a:hover {
@@ -473,42 +286,10 @@ input[type="submit"] {
 	text-decoration: none;
 }
 
-.nav-episodios .thumb {
-	width: 125px;
-	height: 70px;
-	float: left;
-	border: 1px solid #e3e3e3;
-	margin: 0 10px 0 0;
-	overflow: hidden;
-	position: relative;
-	border-radius: 3px;
-}
-
-.nav-episodios .tempo {
-	background-color: #000;
-	display: inline-block;
-	padding: 3px 5px;
-	font-size: 9px;
-	color: #fff;
-	position: absolute;
-	right: 3px;
-	bottom: 3px;
-	border-radius: 5px;
-}
-
 .nav-episodios .tt {
-	font: 15px 'latoHeavy';
-	color: #09a9bd;
-	margin: 3px 0 0;
+	font-family: cafe;
+	color: black;
 }
 
-.nav-episodios .visu,
-.nav-episodios .autor {
-	font-size: 12px;
-	color: #2d2d2d;
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-}
 
 
