@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../../reset.css';
+import {Link} from 'react-router-dom';
 export default class Animes extends Component {    
 
 	constructor(props){
@@ -10,6 +11,12 @@ export default class Animes extends Component {
     renderAnimes = () => {
         const list = this.props.list;
         return list.map( anime => (
+            <Link
+                to={{
+                    pathname:`/anime/${anime.name}`,
+                    state: {id:anime.id}
+                }}
+            >
                 <div className="box-episodio hidden-xs">
                     <div className ="nome-thumb">
                         <a className="tt" href={'/' + anime.name} title={anime.name}> {anime.name}</a>
@@ -30,6 +37,7 @@ export default class Animes extends Component {
                     </div>   
                     </div>
                 </div>
+            </Link>
         ));
             
     }

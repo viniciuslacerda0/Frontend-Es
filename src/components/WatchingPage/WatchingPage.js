@@ -10,12 +10,10 @@ export default class WatchingPage extends Component {
 
 	constructor(props) {
 		super(props);
-		this.state = {
-			url: "https://www.youtube.com/embed/OVLgYc-hYEY",
-			anime: "Naruto",
-			temporada: 1,
-			episodio: 5
-		}
+	}
+
+	componentDidMount() {
+		console.log(this.props.location)
 	}
 
 	render() {
@@ -24,10 +22,10 @@ export default class WatchingPage extends Component {
 				<Propaganda/>
 				<Grid>
 					<Col className="video" xs={12} md={9}>
-						<Row><VideoPlayer url={this.state.url} anime={this.state.anime} episodio={this.state.episodio}/></Row>
+						<Row><VideoPlayer url={this.props.location.state.url} anime={this.props.location.state.animeName} episodio={this.props.location.state.epName}/></Row>
 					</Col>
 					<Col className="sideBar" xs={12} md={3}>
-						<SideBar temporada={this.state.temporada}/>
+						<SideBar temporada="Episódios"/>
 					</Col>
 				</Grid>
 			</div>

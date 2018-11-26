@@ -188,3 +188,108 @@ input[type="submit"] {
   -webkit-animation-direction: normal, alternate;
   animation-direction: normal, alternate;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#content-site {
+	margin: 100px 0 0;
+}
+.top-padrao {
+	background-color: #c4c3c3;
+	padding: 15px 20px;
+	border-radius: 3px 3px 0 0;
+}
+
+.tt-padrao {
+	font: 20px moon;
+	color: black;
+}
+
+#galeria-animes {
+	margin: 30px -12px 0;
+	overflow: hidden;
+}
+
+.box-detalhes-animes {
+  width: 25%;
+  float: left;
+  padding: 0 10px;
+  border-radius: 7px;
+  margin-bottom: 20px;
+}
+.box-detalhes-animes .content {
+	background-color: #fff;
+	padding: 25px;
+}
+
+.col-thumb {
+  width: 500px;
+  float: left;
+}
+
+.col-thumb .thumb {
+	border: 1px solid #c4c3c3;
+	display: block;
+}
+
+
+
+/* ===== PÃGINA DO ANIME ===== */
+#galeria-animes.pgn-anime {
+	margin-top: 0;
+}
+
+.box-detalhes-animes.pgn-anime {
+	width: 100%;
+	float: none;
+}
+
+.box-detalhes-animes.pgn-anime .col-detalhes {
+	width:800px;
+}
+
+.box-detalhes-animes.pgn-anime .descricao {
+	height: 86px; 
+}
+
+
+/* ===== PÃGINA SINGLE EPISÃ“DIOS ONLINE ===== */
+.lista-episodios-relacionados {
+	background-color: #fff;
+	padding: 15px;
+}
+
+.nav-episodios {
+	overflow-y: auto;
+	margin: 12px 0 0;
+	float: center;
+}
+
+.nav-episodios a:hover {
+	background-color: #f0f0f0;
+	text-decoration: none;
+}
+
+.nav-episodios .tt {
+	font-family: cafe;
+	color: black;
+}
+
+
+

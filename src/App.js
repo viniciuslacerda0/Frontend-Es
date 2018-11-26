@@ -13,6 +13,7 @@ import NewEpisode from './components/Admin/NewEpisode'
 import EditAnime from './components/Admin/EditAnime'
 import AnimeList from './components/AnimePage/AnimeList'
 import Contact from './components/Contact/Contact'
+import Anime from'./components/AnimePage/Anime';
 import EditEpisodes from './components/Admin/EditEpisodes'
 import DeleteAnimeEpisodes from './components/Admin/DeleteAnimeEpisodes'
 
@@ -66,6 +67,8 @@ class App extends Component {
                       <Route exact path='/admin' component={Admin}/>
                     }
                     <Route exact path='/contato' component={Contact}/>
+                    <Route exact path="/video/:id" component={WatchingPage}/>
+                    <Route exact path="/anime/:id" component={Anime}/>
                     {this.state.role === 'Admin' &&
                       <Route exact path="/admin/adicionar_anime" component={NewAnime}/>
 
@@ -82,7 +85,6 @@ class App extends Component {
                     {this.state.role === 'Admin' &&
                       <Route exact path="/admin/editar_episodios/:id" component={DeleteAnimeEpisodes}/>
                     }
-                    <Route exact path="/video" component={WatchingPage}/>
               </div>
             );
   }

@@ -10,7 +10,7 @@ export default class SideBar extends React.Component {
 	render() {
 		return (
 			<div className="sidebar">
-				<Panel><h2>Temporada {this.props.temporada}</h2></Panel>
+				<Panel><h2>{this.props.temporada}</h2></Panel>
 			</div>
 		)
 	}

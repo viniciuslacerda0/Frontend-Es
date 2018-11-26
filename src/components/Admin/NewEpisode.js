@@ -3,7 +3,7 @@ import Axios from 'axios';
 import '../Styles/styles.css'
 import './admin.css'
 import PageHeader from '../Template/PageHeader'
-import {Form, Glyphicon, Button, Panel, FormGroup, ControlLabel, FormControl, Grid, Col} from 'react-bootstrap'
+import {Modal, Form, Glyphicon, Button, Panel, FormGroup, ControlLabel, FormControl, Grid, Col} from 'react-bootstrap'
 
 
 class NewEpisode extends React.Component{
@@ -18,7 +18,8 @@ class NewEpisode extends React.Component{
           description: "",
           search: "",
           searchResults: null,
-          enableForm: false
+          enableForm: false,
+          success: false
       }
 
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,6 +27,7 @@ class NewEpisode extends React.Component{
       this.handleChangeAnimeName = this.handleChangeAnimeName.bind(this);
       this.handleChangeChapter = this.handleChangeChapter.bind(this);
       this.handleChangeDescription = this.handleChangeDescription.bind(this);
+      this.handleFile = this.handleFile.bind(this);
       this.search = this.search.bind(this);
       this.openForm = this.openForm.bind(this);
   }
@@ -46,6 +48,19 @@ class NewEpisode extends React.Component{
     this.setState({description: event.target.value});
   }
 
+  handleFile(event){
+    let reader = new FileReader();
+    let file = event.target.files[0];
+    reader.onloadend = () => {
+      this.setState({
+        file: file
+      });
+    }
+
+    reader.readAsDataURL(file)
+  }
+
+
   search() {
     Axios.get("http://34.239.129.125/animes?search=" + this.state.search)
     .then(response => this.setState({searchResults:response.data.content.animes}))
@@ -62,17 +77,21 @@ class NewEpisode extends React.Component{
   handleSubmit(event){
 
     var data = new FormData();
-    data.set('file', this.state.file);
+    data.set('video', this.state.file);
     data.set('name', this.state.name);
     data.set('chapter', this.state.chapter);
     data.set('description', this.state.description);
-
+    console.log(this.state.animeId)
     var token = sessionStorage.getItem('token');
+
     Axios.post('http://34.239.129.125/animes/'+this.state.animeId+"/episodes", data, {
       headers: {
         authorization: `Bearer ${token}`,
+        "Content-Type": "multipart/form-data"
       }
-    }).then(response => console.log(response.data))
+    }).then(response => {
+      console.log("sucess")
+    })
     event.preventDefault();
   }
 
@@ -102,6 +121,7 @@ class NewEpisode extends React.Component{
                                                             <Button type="submit" bsStyle="success">Enviar</Button>
                                                             <a href="/admin"><Button bsStyle="info">Voltar</Button></a></div>) : null}
                 </Form>
+                {this.state.success ? <Modal>nasda</Modal> : null}
           </div>
         </Grid>
       </div>
