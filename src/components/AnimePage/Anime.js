@@ -2,7 +2,7 @@ import React from 'react';
 import '../../App.css'
 import '../../reset.css'
 import PageHeader from '../Template/PageHeader';
-import {Grid, Col} from 'react-bootstrap'
+import {Grid, Col, Glyphicon} from 'react-bootstrap'
 import {Link} from 'react-router-dom';
 import Axios from 'axios';
 
@@ -37,7 +37,7 @@ class Anime extends React.Component {
         .then(response => {
             this.setState({episodes: response.data.content.episodes})
         })
-        .then(res=>console.log(this.state.episodes))
+        .catch(() => alert("error"))
     }
 
     renderAnimeEpisodes = () => {
@@ -51,14 +51,7 @@ class Anime extends React.Component {
                     pathname: `/video/${episodes.id}`,
                     state: { url: episodes.video_url, animeName: this.state.animeName, epName: episodes.name}
                 }}>
-                    <ul>
-                        <li>
-                            <a>
-                                <span class='tt'>{episodes.name}</span>
-                                {console.log(this.props.location.state.id)}
-                            </a>
-                        </li>
-                    </ul>
+                  <span class=''><Glyphicon glyph="play-circle"/> Episódio {episodes.chapter}</span>
                 </Link>
             </nav>
          ));
