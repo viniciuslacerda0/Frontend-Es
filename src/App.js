@@ -14,6 +14,8 @@ import EditAnime from './components/Admin/EditAnime'
 import AnimeList from './components/AnimePage/AnimeList'
 import Contact from './components/Contact/Contact'
 import Anime from'./components/AnimePage/Anime';
+import EditEpisodes from './components/Admin/EditEpisodes'
+import DeleteAnimeEpisodes from './components/Admin/DeleteAnimeEpisodes'
 
 const URL = 'url do api';
 
@@ -21,7 +23,7 @@ class App extends Component {
 
   constructor(props){
     super(props)
-    this.state = {description: '',animes:[]}
+    this.state = {description: '',animes:[], role: sessionStorage.getItem('role')}
 
     this.refresh();
   }
@@ -61,14 +63,28 @@ class App extends Component {
                     <Route  path='/generos/:id' component={Genre}/>
                     <Route exact path='/generos' component={GenresPage}/>
                     <Route exact path='/animes' component={AnimeList}/>
-                    <Route exact path='/admin' component={Admin}/>
+                    {this.state.role === 'Admin' &&
+                      <Route exact path='/admin' component={Admin}/>
+                    }
                     <Route exact path='/contato' component={Contact}/>
-                    <Route exact path="/admin/adicionar_anime" component={NewAnime}/>
-                    <Route exact path="/admin/adicionar_episodios" component={NewEpisode}/>
-                    <Route exact path="/admin/editar_anime" component={EditAnime}/>
-                    <Route exact path="/admin/editar_episodios" component={EditAnime}/>
                     <Route exact path="/video/:id" component={WatchingPage}/>
                     <Route exact path="/anime/:id" component={Anime}/>
+                    {this.state.role === 'Admin' &&
+                      <Route exact path="/admin/adicionar_anime" component={NewAnime}/>
+
+                    }
+                    {this.state.role === 'Admin' &&
+                      <Route exact path="/admin/adicionar_episodios" component={NewEpisode}/>
+                    }
+                    {this.state.role === 'Admin' &&
+                      <Route exact path="/admin/editar_anime" component={EditAnime}/>
+                    }
+                    {this.state.role === 'Admin' &&
+                      <Route exact path="/admin/editar_episodios" component={EditEpisodes}/>
+                    }
+                    {this.state.role === 'Admin' &&
+                      <Route exact path="/admin/editar_episodios/:id" component={DeleteAnimeEpisodes}/>
+                    }
               </div>
             );
   }
