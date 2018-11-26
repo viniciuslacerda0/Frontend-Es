@@ -53,7 +53,6 @@ class Anime extends React.Component{
     }
 
     edited(){
-      console.log(this.state)
       var data = new FormData();
       data.set('name', this.state.name);
       data.set('genre', this.state.genre);

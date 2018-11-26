@@ -12,8 +12,7 @@ export default class Genre extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			animes: [
-			],
+			animes: [{},{},{}],
 			size: 0
 		}
     Axios.get('http://34.239.129.125/animes?'+this.props.location.state).then(res => this.setState({animes: res.data.content.animes})).catch(() => alert('error'))

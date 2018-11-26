@@ -13,6 +13,8 @@ import NewEpisode from './components/Admin/NewEpisode'
 import EditAnime from './components/Admin/EditAnime'
 import AnimeList from './components/AnimePage/AnimeList'
 import Contact from './components/Contact/Contact'
+import EditEpisodes from './components/Admin/EditEpisodes'
+import DeleteAnimeEpisodes from './components/Admin/DeleteAnimeEpisodes'
 
 const URL = 'url do api';
 
@@ -75,7 +77,10 @@ class App extends Component {
                       <Route exact path="/admin/editar_anime" component={EditAnime}/>
                     }
                     {this.state.role === 'Admin' &&
-                      <Route exact path="/admin/editar_episodios" component={EditAnime}/>
+                      <Route exact path="/admin/editar_episodios" component={EditEpisodes}/>
+                    }
+                    {this.state.role === 'Admin' &&
+                      <Route exact path="/admin/editar_episodios/:id" component={DeleteAnimeEpisodes}/>
                     }
                     <Route exact path="/video" component={WatchingPage}/>
               </div>
