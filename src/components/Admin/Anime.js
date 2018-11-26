@@ -6,59 +6,101 @@ class Anime extends React.Component{
     constructor(props){
       super(props);
       this.state = {
-        name: this.props.data.name,
-        genre: this.props.data.genre,
-        resume: this.props.data.resume,
-        id: this.props.data._id,
-        thumb: this.props.data.thumb,
-        input: false
+        file: {},
+        name: "",
+        genre: "",
+        resume: "",
+        id: "",
+        thumb: "",
+        input: false,
+        confirma: false
       }
       this.deleteAnime = this.deleteAnime.bind(this);
       this.editAnime = this.editAnime.bind(this);
       this.edited = this.edited.bind(this);
+      this.handleFile = this.handleFile.bind(this);
       this.handleName = this.handleName.bind(this);
       this.handleGenre = this.handleGenre.bind(this);
       this.handleResume = this.handleResume.bind(this);
+      this.stating = this.stating.bind(this)
     }
 
-    componentDidMount
-
     deleteAnime(){
-      var id = this.state.id;
-      var token = "";
+      var id = this.props.data.id;
+      var token = sessionStorage.getItem("token");
       Axios.delete('http://34.239.129.125/animes/'+id, {
          headers: {
            authorization: `Bearer ${token}`
          }
-       }).then((res) => console.log(res.data))
-            .catch(() => alert("error"));
+       }).then((res) => console.log(this.state))
     }
 
     editAnime(){
+      this.setState({confirma: false});
       this.setState({input: true});
     }
 
+    stating() {
+
+      this.setState({
+        name:this.props.data.name,
+        genre:this.props.data.genre,
+        resume:this.props.data.resume,
+        id:this.props.data.id,
+        thumb:this.props.data.thumb_url,
+        confirma: true
+      })
+    }
+
     edited(){
-      var data = {};
-      data.name = this.state.name;
-      data.genre = this.state.genre;
-      data.resume = this.state.resume;
-      data.thumb = this.state.thumb;
+      console.log(this.state)
+      var data = new FormData();
+      data.set('name', this.state.name);
+      data.set('genre', this.state.genre);
+      data.set('resume', this.state.resume);
+      data.set('thumb', this.state.file);
       var id = this.state.id;
-      var token = "";
+      var token = sessionStorage.getItem("token");
       Axios.put('http://34.239.129.125/animes/'+id, data,
       {
          headers: {
-           authorization: `Bearer ${token}`
+           authorization: `Bearer ${token}`,
+           "Content-Type": "multipart/form-data"
          }
-       }).then(console.log("OK")).catch((res) => alert("error"))
+       })
+      .then(console.log(this.state))
       this.setState({input: false});
+    }
+
+    handleFile(event){
+      let reader = new FileReader();
+      let file = event.target.files[0];
+
+      reader.onloadend = () => {
+        this.setState({
+          file: file
+        });
+      }
+
+      reader.readAsDataURL(file)
     }
 
     handleName(event){
       this.setState({name: event.target.value})
     }
 
+    handleFile(event){
+      let reader = new FileReader();
+      let file = event.target.files[0];
+
+      reader.onloadend = () => {
+        this.setState({
+          file: file
+        });
+      }
+
+      reader.readAsDataURL(file)
+    }
 
     handleGenre(event){
       this.setState({genre: event.target.value});
@@ -71,14 +113,12 @@ class Anime extends React.Component{
 
     render(){
         if(!this.state.input){
-          console.log(this.props.name)
-          console.log("kkkkkkkk")
-          console.log(this.state.name)
         return(
             <tr>
-                <td><p className="center">{this.state.name}</p></td>
-                <td><p className="center">{this.state.genre}</p></td>
-                <td><p className="center">{this.state.resume}</p></td>
+                <td><p className="center">{this.props.data.name}</p></td>
+                <td><p className="center">{this.props.data.genre}</p></td>
+                <td><p className="center">{this.props.data.resume}</p></td>
+                <td><p className="center">Thumb Atual</p></td>
                 <td><p className="center"><Button className="btn btn-default btn-sm btn-red" onClick={this.deleteAnime}>
                      <Glyphicon glyph="remove"/></Button></p>
                 </td>
@@ -91,15 +131,18 @@ class Anime extends React.Component{
       } else{
         return(
         <tr>
-            <td><FormControl type="text" className="center" value={this.state.name} onChange={this.handleName}/></td>
-            <td><FormControl type="text" className="center number" value={this.state.genre} onChange={this.handleGenre}/></td>
-            <td><FormControl componentClass="textarea" type="text" className="center number" value={this.state.resume} onChange={this.handleResume}/></td>
+            <td><FormControl type="text" className="center" placeholder={this.props.data.name} onChange={this.handleName}/></td>
+            <td><FormControl type="text" className="center number" placeholder={this.props.data.genre} onChange={this.handleGenre}/></td>
+            <td><FormControl componentClass="textarea" type="text" className="center number" placeholder={this.props.data.resume} onChange={this.handleResume}/></td>
+            <td><FormControl type="file" onChange={this.handleFile}/><p/></td>
             <td><p className="center"><Button className="btn btn-default btn-sm btn-red" onClick={this.apagaAnime} disabled>
                  <Glyphicon glyph="remove"/></Button></p>
             </td>
-            <td> <p className="center"><Button type="button" className="btn btn-default btn-sm btn-green" onClick={this.edited}>
+            <td> <p className="center"><Button type="button" className="btn btn-default btn-sm btn-green" onClick={this.stating}>
                  <Glyphicon glyph="ok"/></Button> </p>
             </td>
+            {this.state.confirma ? <td><p className="center"><Button className="btn btn-default btn-sm btn-red" onClick={this.edited}>Atualizar</Button></p>            </td>
+ : null}
         </tr>
       )}
     }

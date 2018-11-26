@@ -22,7 +22,6 @@ class NewEpisode extends React.Component{
       }
 
       this.handleSubmit = this.handleSubmit.bind(this);
-      this.handleFile = this.handleFile.bind(this);
       this.handleChangeName = this.handleChangeName.bind(this);
       this.handleChangeAnimeName = this.handleChangeAnimeName.bind(this);
       this.handleChangeChapter = this.handleChangeChapter.bind(this);
@@ -52,18 +51,6 @@ class NewEpisode extends React.Component{
     .then(response => this.setState({searchResults:response.data.content.animes}))
   }
 
-  handleFile(event){
-    let reader = new FileReader();
-    let file = event.target.files[0];
-
-    reader.onloadend = () => {
-      this.setState({
-        file: file
-      });
-    }
-
-    reader.readAsDataURL(file)
-  }
 
   openForm(e) {
     console.log(e);
