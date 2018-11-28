@@ -8,7 +8,7 @@ export default props => {
         const list = props.list
         return list.slice(0, 10).map(anime => (
             <Link to={{
-                pathname:`/anime/${anime.name}`,
+                pathname:`/anime/${anime.id}`,
                 state: {id:anime.id}
             }}
             >

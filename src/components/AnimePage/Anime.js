@@ -14,7 +14,7 @@ class Anime extends React.Component {
         super(props);
         this.state = {
             isLogged: sessionStorage.getItem('token'),
-            id: "",
+            id: this.props.match.url.substring(7,this.props.match.url.length),
             animeName: "",
             resume: "",
             genre: "",
@@ -52,7 +52,7 @@ class Anime extends React.Component {
                 <Link   className="genreBox"
                 to={{
                     pathname: `/video/${episodes.id}`,
-                    state: { url: episodes.video_url, animeName: this.state.animeName, epName: episodes.name, animeID: this.state.id}
+                    state: { url: episodes.video_url, animeName: this.state.animeName, epName: episodes.name, animeID: this.aniemID}
                 }}>
                   <span className=''><Glyphicon glyph="play-circle"/> Episódio {episodes.chapter}</span>
                 </Link>

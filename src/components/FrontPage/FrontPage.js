@@ -18,6 +18,7 @@ export default class FrontPage extends Component {
 						topAnimes: []
         }
         this.onChangePage = this.onChangePage.bind(this);
+				this.atualizaTop = this.atualizaTop.bind(this);
 	}
 
 	 onChangePage(pageOfItems){
@@ -31,8 +32,15 @@ export default class FrontPage extends Component {
 
 		Axios.get('http://34.239.129.125/animes?sortBy=name&order=asc')
         .then(res => this.setState({topAnimes:res.data.content.animes}))
-        .then(r=> console.log(this.state.TopAnimes))
+        .then(r=> console.log(this.atualizaTop(this.state.topAnimes)))
     }
+
+		atualizaTop(list){
+			var newlist = list.sort(function(a, b) {
+  				return b.score - a.score;
+				});
+				return newlist
+		}
 
 	render() {
 		return(
