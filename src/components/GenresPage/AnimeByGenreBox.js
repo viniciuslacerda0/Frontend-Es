@@ -15,7 +15,7 @@ export default class AnimeByGenreBox extends React.Component {
 
 	render() {
 		return (
-			<Link to={{pathname: `/anime/${this.props.nome}`,
+			<Link to={{pathname: `/anime/${this.props.id}`,
 					  state: {id:this.props.id}
 			}}>
 			<div>
