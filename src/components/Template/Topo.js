@@ -89,10 +89,7 @@ export default class Topo extends Component {
                                       to={{
                                         pathname:`/contato`,
                                       }}>CONTATO</Link></li>
-                                {this.state.role === "Admin" ? <li><Link
-                                      to={{
-                                        pathname:`/admin`,
-                                      }}>UPLOAD</Link></li> : null}
+
                                 {!this.state.isLogged ? <li style={{color: "white", cursor: "pointer"}} onClick={() => this.showLogin()}> LOGIN </li> : null}
                                 {!this.state.isLogged ? <li><p style={{color: "white", cursor: "pointer"}} onClick={() => this.showRegister()}> CADASTRO </p></li> : null}
                                 <li><input className="form-control input-md" placeholder="Pesquisar" onChange={this.handleChangeName} type='text'/></li>

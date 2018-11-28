@@ -7,10 +7,10 @@ class Anime extends React.Component{
       super(props);
       this.state = {
         file: {},
-        name: "",
-        genre: "",
-        resume: "",
-        id: "",
+        name: this.props.data.name,
+        genre: this.props.data.genre,
+        resume: this.props.data.resume,
+        id: this.props.data.id,
         thumb: "",
         input: false,
         confirma: false
@@ -43,11 +43,6 @@ class Anime extends React.Component{
     stating() {
 
       this.setState({
-        name:this.props.data.name,
-        genre:this.props.data.genre,
-        resume:this.props.data.resume,
-        id:this.props.data.id,
-        thumb:this.props.data.thumb_url,
         confirma: true
       })
     }
@@ -66,8 +61,7 @@ class Anime extends React.Component{
            authorization: `Bearer ${token}`,
            "Content-Type": "multipart/form-data"
          }
-       })
-      .then(console.log(this.state))
+       }).then(() => console.log("ok")).catch(() => console.log("error"))
       this.setState({input: false});
     }
 
@@ -89,12 +83,14 @@ class Anime extends React.Component{
     }
 
     handleGenre(event){
+
       this.setState({genre: event.target.value});
     }
 
     handleResume(event){
       this.setState({resume: event.target.value});
     }
+
 
 
     render(){
@@ -117,9 +113,9 @@ class Anime extends React.Component{
       } else{
         return(
         <tr>
-            <td><FormControl type="text" className="center" placeholder={this.props.data.name} onChange={this.handleName}/></td>
-            <td><FormControl type="text" className="center number" placeholder={this.props.data.genre} onChange={this.handleGenre}/></td>
-            <td><FormControl componentClass="textarea" type="text" className="center number" placeholder={this.props.data.resume} onChange={this.handleResume}/></td>
+            <td><FormControl type="text" className="center" value={this.state.name} onChange={this.handleName}/></td>
+            <td><FormControl type="text" className="center number" value={this.state.genre} onChange={this.handleGenre}/></td>
+            <td><FormControl componentClass="textarea" type="text" className="center number" value={this.state.resume} onChange={this.handleResume}/></td>
             <td><FormControl type="file" onChange={this.handleFile}/><p/></td>
             <td><p className="center"><Button className="btn btn-default btn-sm btn-red" onClick={this.apagaAnime} disabled>
                  <Glyphicon glyph="remove"/></Button></p>
