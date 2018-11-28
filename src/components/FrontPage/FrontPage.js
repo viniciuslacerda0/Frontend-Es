@@ -54,7 +54,6 @@ export default class FrontPage extends Component {
 						<PageHeader name='Últimos' small='lançamentos'/>
 					</Row>
 					<Row>
-					<Pagination items={this.state.exampleItems} onChangePage={this.onChangePage}/>
 					<Animes list={this.state.pageOfItems}/>
 					<br/> <br/>
 					<Pagination items={this.state.exampleItems} onChangePage={this.onChangePage}/>

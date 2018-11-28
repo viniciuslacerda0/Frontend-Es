@@ -30,7 +30,7 @@ class ShowAnimes extends React.Component{
     return(
       <div>
         <PageHeader name="Animes"/>
-        <Grid style={{"textAlign":"center"}}>
+        <Grid >
 
           <Col md={2}>
           {animes.map((a, index) => {

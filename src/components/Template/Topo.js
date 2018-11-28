@@ -90,8 +90,8 @@ export default class Topo extends Component {
                                         pathname:`/contato`,
                                       }}>CONTATO</Link></li>
 
-                                {!this.state.isLogged ? <li style={{color: "white", cursor: "pointer",  "marginLeft":"16px", "marginRight":"16px", "marginTop":"13px"}} onClick={() => this.showLogin()}> LOGIN </li> : null}
-                                {!this.state.isLogged ? <li><p style={{color: "white", cursor: "pointer", "marginRight":"10px", "marginTop":"13px"}} onClick={() => this.showRegister()}> CADASTRO </p></li> : null}
+                                {!this.state.isLogged ? <li style={{color: "white", cursor: "pointer",  "marginLeft":"16px", "marginRight":"16px", "marginTop":"8px"}} onClick={() => this.showLogin()}> LOGIN </li> : null}
+                                {!this.state.isLogged ? <li><p style={{color: "white", cursor: "pointer", "marginRight":"10px", "marginTop":"8px"}} onClick={() => this.showRegister()}> CADASTRO </p></li> : null}
                                 {this.state.role === "Admin" ? <li><Link
                                       to={{
                                         pathname:`/admin`,
@@ -105,7 +105,7 @@ export default class Topo extends Component {
 
 			}}><tr><Thumbnail onClick={() => this.closeForm()} src={a.thumb}>{a.name}</Thumbnail></tr></Link>)}</td></table> ) : null}
 
-                                {this.state.isLogged ? (<li><p style={{color: "white", cursor: "pointer",  "marginTop":"13px"}} onClick={() => this.logOut()}>SAIR</p></li>) : null}
+                                {this.state.isLogged ? (<li><a style={{color: "white", cursor: "pointer"}} onClick={() => this.logOut()}>SAIR</a></li>) : null}
                             </ul>
                         </div>
                     </div>
