@@ -61,7 +61,7 @@ class Anime extends React.Component{
            authorization: `Bearer ${token}`,
            "Content-Type": "multipart/form-data"
          }
-       }).then(() => console.log("ok")).catch(() => console.log("error"))
+       }).then(() => document.location.reload(true)).catch(() => console.log("error"))
       this.setState({input: false});
     }
 

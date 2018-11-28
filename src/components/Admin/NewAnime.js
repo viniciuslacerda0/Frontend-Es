@@ -12,7 +12,9 @@ class NewAnime extends React.Component{
           genre: "",
           name: "",
           resume: "",
-          file: {}
+          file: {},
+          upando: false,
+          erro: false
 
       }
       this.handleChangeGenre = this.handleChangeGenre.bind(this);
@@ -56,13 +58,15 @@ class NewAnime extends React.Component{
 
     const url = 'http://34.239.129.125/'
     var token = sessionStorage.getItem("token");
+    this.setState({upando: true, erro: false})
+
     Axios.post(url + 'animes', data,
     { headers: {
       authorization: `Bearer ${token}`,
       'content-type': 'multipart/form-data'
     }
   }).then(() =>  document.location.reload (true))
-        .catch(() => alert("error"));
+        .catch(() => this.setState({upando: false, erro: true}));
 
     event.preventDefault();
   }
@@ -87,6 +91,8 @@ class NewAnime extends React.Component{
                   <Button type="submit" bsStyle="success">Submit</Button>
                   <a href="/admin"><Button bsStyle="info">Voltar</Button></a>
                 </Form>
+                {this.state.upando ? <p> Enviando anime... </p> : null}
+                {this.state.erro ? <p> Erro ao enviar, tente novamente </p> : null}
           </div>
         </Grid>
       </div>
