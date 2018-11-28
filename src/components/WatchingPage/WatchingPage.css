@@ -25,3 +25,9 @@
 .episodebtn{
 	padding: 30px;
 }
+
+.optionsBar {
+	font-family: moon;
+	color: black;
+	text-shadow: 1px 1px orange;
+}

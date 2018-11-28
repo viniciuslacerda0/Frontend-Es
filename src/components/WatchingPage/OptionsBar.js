@@ -16,7 +16,7 @@ export default class OptionsBar extends React.Component {
 	}
 	render() {
 		return(
-			<div>
+			<div className="optionsBar">
 				<Col md={4}><h2 style={{"textAlign":"left"}}>Episódio {this.props.episodio} - <small>{this.props.anime}</small></h2></Col>
 				<Col md={8} style={{"textAlign":"right", "marginTop":20}}>
 					{this.state.isLogged ? <RatingBar animeID={this.props.animeID} episodeID={this.props.episodeID}/> : null}

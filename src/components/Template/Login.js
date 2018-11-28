@@ -36,7 +36,7 @@ export default class Login extends Component{
         sessionStorage.setItem("token", token);
         sessionStorage.setItem("role", role);
         document.location.reload (true);
-      }).catch(() => alert("error"))
+      }).catch(() => alert("Erro no login!"))
 
       e.preventDefault();
     }

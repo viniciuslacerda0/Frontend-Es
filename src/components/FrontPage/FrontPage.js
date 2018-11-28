@@ -25,12 +25,13 @@ export default class FrontPage extends Component {
     }
 
     componentDidMount() {
-        Axios.get('http://34.239.129.125/animes')
+        Axios.get('http://34.239.129.125/animes?sortBy=createdAt&order=desc')
         .then(response => this.setState({listAnimes:response.data.content.animes}))
-        .then(response => this.setState({exampleItems: this.state.listAnimes}))
+        .then(response => this.setState({exampleItems: this.state.listAnimes}));
 
-				Axios.get('http://34.239.129.125/animes')
-        .then(response => this.setState({topAnimes:response.data.content.animes}))
+		Axios.get('http://34.239.129.125/animes?sortBy=name&order=asc')
+        .then(res => this.setState({topAnimes:res.data.content.animes}))
+        .then(r=> console.log(this.state.TopAnimes))
     }
 
 	render() {
@@ -52,7 +53,7 @@ export default class FrontPage extends Component {
 					</Row>
 				</Col>
 				<Col md={3}>
-					<PageHeader name='Top animes'/>
+					<PageHeader name='Top 10 animes'/>
                     <TopAnimes list={this.state.topAnimes}/>
 				</Col>
 			</Grid>

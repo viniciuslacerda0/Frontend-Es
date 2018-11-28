@@ -105,7 +105,7 @@ export default class Topo extends Component {
             to={{
               pathname:`/admin`,
             }}><p style={{color: "white", cursor: "pointer"}}>UPLOAD</p></Link></li> : null}
-                                {this.state.isLogged ? (<li><p style={{color: "white", cursor: "pointer"}} onClick={() => this.logOut()}>SAIR</p></li>) : null}
+                                {this.state.isLogged ? (<li><p style={{color: "white", cursor: "pointer",  "marginTop":"13px"}} onClick={() => this.logOut()}>SAIR</p></li>) : null}
                             </ul>
                         </div>
                     </div>
