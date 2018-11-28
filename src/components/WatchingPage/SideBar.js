@@ -7,25 +7,29 @@ import {Link} from 'react-router-dom';
 
 
 export default class SideBar extends React.Component {
-	
+
 	constructor(props) {
 		super(props);
 		this.state = {
 			episodes: []
 		}
+		this.att = this.att.bind(this)
+	}
 
+	att(){
+		document.location.reload (true)
 	}
 
 	renderEpisodeList(){
-		
-		return this.state.episodes.map(a => (<li><Link   className="genreBox"
+
+		return this.state.episodes.map(a => (<li onClick={this.att}><Link className="genreBox"
 		to={{
-			pathname: `/video/${a.id}`,
+			pathname: `/anime/${this.props.animeName}/video/${a.id}`,
 			state: { url: a.video_url, animeName: this.state.animeName, epName: a.name, animeID: this.state.id}
 		}}>
 		  <span className='episodebtn'><Glyphicon glyph="play-circle"/> Episódio {a.chapter}</span>
 		</Link></li>));
-		
+
 	}
 
 	componentWillMount(){
@@ -37,7 +41,7 @@ export default class SideBar extends React.Component {
 	render() {
 		return (
 			<div className="sidebar">
-				
+
 					<div id="sidebar">
 					<ButtonGroup style={{marginBottom: "10px"}}>
 					<ul>
@@ -45,8 +49,8 @@ export default class SideBar extends React.Component {
 					</ul>
 					</ButtonGroup>
 					</div>
-				
-				
+
+
 			</div>
 		)
 	}
