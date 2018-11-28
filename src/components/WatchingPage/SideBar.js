@@ -23,7 +23,7 @@ export default class SideBar extends React.Component {
 			pathname: `/video/${a.id}`,
 			state: { url: a.video_url, animeName: this.state.animeName, epName: a.name, animeID: this.state.id}
 		}}>
-		  <span className=''><Glyphicon glyph="play-circle"/> Episódio {a.chapter}</span>
+		  <span className='episodebtn'><Glyphicon glyph="play-circle"/> Episódio {a.chapter}</span>
 		</Link></li>));
 		
 	}
