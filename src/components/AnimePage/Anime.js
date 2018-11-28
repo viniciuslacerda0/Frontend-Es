@@ -48,13 +48,13 @@ class Anime extends React.Component {
 
         return list.map( episodes => (
 
-            <nav class='nav-episodios pgn-anime full-hidden'>
+            <nav className='nav-episodios pgn-anime full-hidden'>
                 <Link   className="genreBox"
                 to={{
                     pathname: `/video/${episodes.id}`,
                     state: { url: episodes.video_url, animeName: this.state.animeName, epName: episodes.name, animeID: this.state.id}
                 }}>
-                  <span class=''><Glyphicon glyph="play-circle"/> Episódio {episodes.chapter}</span>
+                  <span className=''><Glyphicon glyph="play-circle"/> Episódio {episodes.chapter}</span>
                 </Link>
             </nav>
          ));
@@ -64,20 +64,20 @@ class Anime extends React.Component {
     render(){
         return(
             <main id='content-site'>
-                <Grid class='container'>
+                <Grid className='container'>
                     <Col md={9}>
 
-                        <div id='galeria-animes' class='pgn-anime'>
-                            <div class='box-detalhes-animes pgn-anime'>
-                                <header class='top-padrao full-hidden'>
+                        <div id='galeria-animes' className='pgn-anime'>
+                            <div className='box-detalhes-animes pgn-anime'>
+                                <header className='top-padrao full-hidden'>
 
-                                    <h2 class='tt-padrao'>{this.state.animeName} {this.state.isLogged ? <RatingBar animeID={this.state.id}/> : null} </h2>
+                                    <h2 className='tt-padrao'>{this.state.animeName} {this.state.isLogged ? <RatingBar animeID={this.state.id}/> : null} </h2>
                                 </header>
 
-                                <div class='content full-hidden'>
+                                <div className='content full-hidden'>
                                     <Col md={9}>
-                                        <div class='thumb'>
-                                            <img src={this.state.thumb} title={this.state.animeName} alt={this.state.animeName} class='img-responsive'/>
+                                        <div className='thumb'>
+                                            <img src={this.state.thumb} title={this.state.animeName} alt={this.state.animeName} className='img-responsive'/>
                                         </div>
                                     </Col>
                                     <Col>
@@ -99,11 +99,11 @@ class Anime extends React.Component {
                         </div>
 
 
-                        <div class='listagem-episodios'>
-                            <header class='top-padrao full-hidden'>
-                                <h2 class='tt-padrao left no-float-xs'>Episódios</h2>
+                        <div className='listagem-episodios'>
+                            <header className='top-padrao full-hidden'>
+                                <h2 className='tt-padrao left no-float-xs'>Episódios</h2>
                             </header>
-                            <div class='lista-episodios-relacionados'>
+                            <div className='lista-episodios-relacionados'>
                                 {this.renderAnimeEpisodes()}
                             </div>
                         </div>

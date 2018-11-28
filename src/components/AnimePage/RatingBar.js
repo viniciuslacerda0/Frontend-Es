@@ -11,7 +11,6 @@ export default class RatingBar extends Component{
             token: sessionStorage.getItem('token'),
             evaluationID: ""
         }
-        console.log(this.state.animeID)
         this.clickone = this.clickone.bind(this)
         Axios.get(`http://34.239.129.125/me/animes/${this.state.animeID}/evaluations`, {
           headers: {

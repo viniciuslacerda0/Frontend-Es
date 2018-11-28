@@ -13,9 +13,7 @@ export default props => {
             }}
             >
                 <tr key={anime._id}  id="topAnimes" className="list-group-item">
-                    <a href={"/anime/"+anime.name} >
                         {anime.name}
-                    </a>
                 </tr>
             </Link>
         ))

@@ -73,21 +73,41 @@ export default class Topo extends Component {
                     <div className='container'>
                         <div className='navbar-collapse collapse'>
                             <ul className="nav navbar-nav">
-                                <li><a href="/">HOME</a></li>
-                                <li><a href="/animes">ANIMES</a></li>
-                                <li><a href="/generos">GÊNEROS</a></li>
-                                <li><a href="/contato">CONTATO</a></li>
-                                {this.state.role === "Admin" ? <li><a href="/admin" style={{color: "white", cursor: "pointer"}}>UPLOAD</a></li> : null}
-                                {!this.state.isLogged ? <li><a style={{color: "white", cursor: "pointer"}} onClick={() => this.showLogin()}>LOGIN</a></li> : null}
-                                {!this.state.isLogged ? <li><a style={{color: "white", cursor: "pointer"}} onClick={() => this.showRegister()}>CADASTRO</a></li> : null}
+                                <li><Link
+                                      to={{
+                                        pathname:`/`,
+                                      }}>HOME</Link></li>
+                                <li><Link
+                                      to={{
+                                        pathname:`/animes`,
+                                      }}>ANIMES</Link></li>
+                                <li><Link
+                                      to={{
+                                        pathname:`/generos`,
+                                      }}>GÊNEROS</Link></li>
+                                <li><Link
+                                      to={{
+                                        pathname:`/contato`,
+                                      }}>CONTATO</Link></li>
+                                {this.state.role === "Admin" ? <li><Link
+                                      to={{
+                                        pathname:`/admin`,
+                                      }}>UPLOAD</Link></li> : null}
+                                {!this.state.isLogged ? <li style={{color: "white", cursor: "pointer"}} onClick={() => this.showLogin()}> LOGIN </li> : null}
+                                {!this.state.isLogged ? <li><p style={{color: "white", cursor: "pointer"}} onClick={() => this.showRegister()}> CADASTRO </p></li> : null}
                                 <li><input className="form-control input-md" placeholder="Pesquisar" onChange={this.handleChangeName} type='text'/></li>
                                 <li><button type='submit' className='buttonMenu btn btn-info' onClick={this.search}>
                                         <i className='fa fa-search'></i>
                                     </button></li>
                                 {(this.state.searchResults != null && !this.state.enableForm) ? (<table style={{}}><td>{this.state.searchResults.map(a =><Link to={{pathname: `/anime/${a.name}`,
 					  state: {id:a.id}
+
 			}}><tr><Thumbnail onClick={() => this.closeForm()} src={a.thumb}>{a.name}</Thumbnail></tr></Link>)}</td></table> ) : null}
-                                {this.state.isLogged ? (<li><a style={{color: "white", cursor: "pointer"}} onClick={() => this.logOut()}>SAIR</a></li>) : null}
+      {this.state.role === "Admin" ? <li><Link
+            to={{
+              pathname:`/admin`,
+            }}><p style={{color: "white", cursor: "pointer"}}>UPLOAD</p></Link></li> : null}
+                                {this.state.isLogged ? (<li><p style={{color: "white", cursor: "pointer"}} onClick={() => this.logOut()}>SAIR</p></li>) : null}
                             </ul>
                         </div>
                     </div>

@@ -22,7 +22,7 @@ export default class OptionsBar extends React.Component {
 					{this.state.isLogged ? <RatingBar animeID={this.props.animeID} episodeID={this.props.episodeID}/> : null}
 					<ButtonGroup>
 						<Button><i className="fas fa-arrow-left"></i> Episódio Anterior</Button>
-						<Button>Próximo Episódio <i class="fas fa-arrow-right"></i></Button>
+						<Button>Próximo Episódio <i className="fas fa-arrow-right"></i></Button>
 					</ButtonGroup>
 				</Col>
 			</div>

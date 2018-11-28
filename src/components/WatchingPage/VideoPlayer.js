@@ -14,9 +14,9 @@ export default class VideoPlayer extends React.Component {
 					className="embed-responsive-item"
 					src={this.props.url}
 					title={this.props.anime+" - "+this.props.episodio}
-					frameborder="0"
+					frameBorder="0"
 					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-					allowfullscreen>
+					allowFullScreen>
 				</iframe>
 				</div>
 				<OptionsBar anime={this.props.anime} episodio={this.props.episodio} animeID={this.props.animeID} episodeID={this.props.episodeID}/>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../../reset.css';
 import {Link} from 'react-router-dom';
-export default class Animes extends Component {    
+export default class Animes extends Component {
 
 	constructor(props){
       super(props);
@@ -19,27 +19,26 @@ export default class Animes extends Component {
             >
                 <div className="box-episodio hidden-xs">
                     <div className ="nome-thumb">
-                        <a className="tt" href={'/' + anime.name} title={anime.name}> {anime.name}</a>
-                        <a href={'/' + anime.name} title={anime.name} className="thumb">
-                        <img src={anime.thumb_url} alt = "" className="img-full"/>
-                        <span className="num-episodio">epi{anime.episode}</span>
-                        </a>    
+                        <p className="tt" href={'/' + anime.name} title={anime.name}> {anime.name}</p>
+                        <p href={'/' + anime.name} title={anime.name} className="thumb">
+                        <img src={anime.thumb_url} alt = "Foto do anime" className="img-full"/>
+                        </p>
                     </div>
                     <div className="lista-servers hvr-bob">
                         <div className="content-servers relative item1 1-versao atual esconder">
                         <ul>
-                            
+
                         </ul>
                         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossOrigin="anonymous"/>
-                        <a className="btn-online" href={'/' + anime.name + '/' + anime.episode} title="Assista">  
+                        <p className="btn-online" href={'/' + anime.name + '/' + anime.episode} title="Assista">
                         Assista Online
-                        </a> 
-                    </div>   
+                        </p>
+                    </div>
                     </div>
                 </div>
             </Link>
         ));
-            
+
     }
 
     render() {

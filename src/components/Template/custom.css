@@ -96,3 +96,7 @@
     padding: 3px;
 }
 
+.light{
+  color: "white";
+  cursor: "pointer";
+}

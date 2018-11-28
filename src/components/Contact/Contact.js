@@ -63,7 +63,7 @@ class Contact extends React.Component{
                   <ControlLabel>Mensagem:</ControlLabel>
                   <FormControl componentClass="textarea" value={this.state.message} onChange={this.handleChangeMessage}/><p/>
                 </FormGroup>
-                <div className="center"><Button type="enviar" bsStyle="success">Submit</Button></div>
+                <div className="center"><Button type="submit" bsStyle="success">Submit</Button></div>
               </Form>
         </div>
       </Grid>
