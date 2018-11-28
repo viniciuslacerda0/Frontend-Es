@@ -79,7 +79,7 @@ export default class Topo extends Component {
                                       }}>HOME</Link></li>
                                 <li><Link
                                       to={{
-                                        pathname:`/animes`,
+                                        pathname:`/anime`,
                                       }}>ANIMES</Link></li>
                                 <li><Link
                                       to={{
@@ -93,8 +93,8 @@ export default class Topo extends Component {
                                       to={{
                                         pathname:`/admin`,
                                       }}>UPLOAD</Link></li> : null}
-                                {!this.state.isLogged ? <li style={{color: "white", cursor: "pointer"}} onClick={() => this.showLogin()}> LOGIN </li> : null}
-                                {!this.state.isLogged ? <li><p style={{color: "white", cursor: "pointer"}} onClick={() => this.showRegister()}> CADASTRO </p></li> : null}
+                                {!this.state.isLogged ? <li style={{color: "white", cursor: "pointer",  "marginLeft":"16px", "marginRight":"16px", "marginTop":"13px"}} onClick={() => this.showLogin()}> LOGIN </li> : null}
+                                {!this.state.isLogged ? <li><p style={{color: "white", cursor: "pointer", "marginRight":"10px", "marginTop":"13px"}} onClick={() => this.showRegister()}> CADASTRO </p></li> : null}
                                 <li><input className="form-control input-md" placeholder="Pesquisar" onChange={this.handleChangeName} type='text'/></li>
                                 <li><button type='submit' className='buttonMenu btn btn-info' onClick={this.search}>
                                         <i className='fa fa-search'></i>
@@ -112,7 +112,7 @@ export default class Topo extends Component {
                         </div>
                     </div>
                     <div>
-                        {this.state.showLogin ? <Login /> : null}
+                        {this.state.showLogin ? <Login/>: null}
                         {this.state.showRegister ? <Register /> : null}
 
                     </div>

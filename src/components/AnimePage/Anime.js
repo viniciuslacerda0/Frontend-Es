@@ -67,11 +67,8 @@ class Anime extends React.Component {
                 <Grid className='container'>
                     <Col md={9}>
 
-                        <div id='galeria-animes' className='pgn-anime'>
-                            <div className='box-detalhes-animes pgn-anime'>
-                                <header className='top-padrao full-hidden'>
-
-                                    <h2 className='tt-padrao'>{this.state.animeName} {this.state.isLogged ? <RatingBar animeID={this.state.id}/> : null} </h2>
+                                <header className='headerAnime'>
+                                    <h2 className=''>{this.state.animeName} {this.state.isLogged ? <RatingBar animeID={this.state.id}/> : null} </h2>
                                 </header>
 
                                 <div className='content full-hidden'>
@@ -95,8 +92,6 @@ class Anime extends React.Component {
 
 
                                 </div>
-                            </div>
-                        </div>
 
 
                         <div className='listagem-episodios'>

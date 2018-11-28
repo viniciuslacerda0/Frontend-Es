@@ -42,7 +42,7 @@ export default class FrontPage extends Component {
 			<Grid >
 				<Col md={9}>
 					<Row>
-						<PageHeader name='Ultimos' small='lancamentos'/>
+						<PageHeader name='Últimos' small='lançamentos'/>
 					</Row>
 					<Row>
 					<Pagination items={this.state.exampleItems} onChangePage={this.onChangePage}/>
