@@ -17,7 +17,7 @@ import EditEpisodes from './components/Admin/EditEpisodes'
 import DeleteAnimeEpisodes from './components/Admin/DeleteAnimeEpisodes'
 import SearchAnimes from './components/Template/searchAnimes'
 
-const URL = 'url do api';
+const URL = 'http://34.239.129.125/';
 
 class App extends Component {
 
@@ -25,7 +25,7 @@ class App extends Component {
     super(props)
     this.state = {description: '',animes:[], role: sessionStorage.getItem('role')}
 
-    this.refresh();
+    // this.refresh();
   }
 
   refresh(description=''){

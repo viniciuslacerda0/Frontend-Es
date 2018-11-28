@@ -20,7 +20,7 @@ export default class AnimeByGenreBox extends React.Component {
 			}}>
 			<div>
 				<Thumbnail >
-				<img className="animeBoxImg" src={this.props.thumb} />
+				<img className="animeBoxImg" alt={"foto do anime"} src={this.props.thumb} />
 				<h3>{this.props.nome}</h3>
 				<small>{this.state.episodes} episódios</small>
 				</Thumbnail>

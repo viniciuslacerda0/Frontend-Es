@@ -1,3 +1,16 @@
 .episodio{
-	
+
+}
+
+.rating{
+	text-align: center;
+	border-style: solid;
+	border-radius: 3px;
+	border-width: 1px;
+	margin-right: 55px;
+	background: white;
+}
+
+.center{
+	text-align: center
 }

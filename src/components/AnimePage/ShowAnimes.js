@@ -31,35 +31,35 @@ class ShowAnimes extends React.Component{
       <div>
         <PageHeader name="Animes"/>
         <Grid style={{"textAlign":"center"}}>
-          
-          <Col md={2}>              
-          {animes.map((a, index) => { 
-                if(index < size){return(<AnimeBox name={a.name} thumb={a.thumb_url} id={a.id}/>)}
-          })}</Col>
-          
-          <Col md={2}>              
+
+          <Col md={2}>
           {animes.map((a, index) => {
-                if(index >= size && index < size*2){return(<AnimeBox name={a.name} thumb={a.thumb_url} id={a.id}/>)}
+                if(index < size){return(<AnimeBox name={a.name} thumb={a.thumb_url} id={a.id}/>)} else {return null}
           })}</Col>
-          
-          <Col md={2}>              
+
+          <Col md={2}>
           {animes.map((a, index) => {
-                if(index >= size*2 && index < size*3){return(<AnimeBox name={a.name} thumb={a.thumb_url} id={a.id}/>)}
+                if(index >= size && index < size*2){return(<AnimeBox name={a.name} thumb={a.thumb_url} id={a.id}/>)} else {return null}
           })}</Col>
-          
-          <Col md={2}>              
+
+          <Col md={2}>
           {animes.map((a, index) => {
-                if(index >= size*3 && index < size*4){return(<AnimeBox name={a.name} thumb={a.thumb_url} id={a.id}/>)}
+                if(index >= size*2 && index < size*3){return(<AnimeBox name={a.name} thumb={a.thumb_url} id={a.id}/>)} else {return null}
           })}</Col>
-          
-          <Col md={2}>              
+
+          <Col md={2}>
           {animes.map((a, index) => {
-                if(index >= size*4 && index < size*5){return(<AnimeBox name={a.name} thumb={a.thumb_url} id={a.id}/>)}
+                if(index >= size*3 && index < size*4){return(<AnimeBox name={a.name} thumb={a.thumb_url} id={a.id}/>)} else {return null}
           })}</Col>
-          
-          <Col md={2}>              
+
+          <Col md={2}>
           {animes.map((a, index) => {
-                if(index >= size*5 && index < size*6){return(<AnimeBox name={a.name} thumb={a.thumb_url} id={a.id}/>)}
+                if(index >= size*4 && index < size*5){return(<AnimeBox name={a.name} thumb={a.thumb_url} id={a.id}/>)} else {return null}
+          })}</Col>
+
+          <Col md={2}>
+          {animes.map((a, index) => {
+                if(index >= size*5 && index < size*6){return(<AnimeBox name={a.name} thumb={a.thumb_url} id={a.id}/>)} else {return null}
           })}</Col>
 
         </Grid>

@@ -14,7 +14,8 @@ export default class FrontPage extends Component {
         this.state = {
             listAnimes: [],
             pageOfItems: [],
-            exampleItems: []
+            exampleItems: [],
+						topAnimes: []
         }
         this.onChangePage = this.onChangePage.bind(this);
 	}
@@ -27,6 +28,9 @@ export default class FrontPage extends Component {
         Axios.get('http://34.239.129.125/animes')
         .then(response => this.setState({listAnimes:response.data.content.animes}))
         .then(response => this.setState({exampleItems: this.state.listAnimes}))
+
+				Axios.get('http://34.239.129.125/animes')
+        .then(response => this.setState({topAnimes:response.data.content.animes}))
     }
 
 	render() {
@@ -47,7 +51,7 @@ export default class FrontPage extends Component {
 				</Col>
 				<Col md={3}>
 					<PageHeader name='Top animes'/>
-                    <TopAnimes list={this.state.pageOfItems}/>
+                    <TopAnimes list={this.state.topAnimes}/>
 				</Col>
 			</Grid>
 			</div>

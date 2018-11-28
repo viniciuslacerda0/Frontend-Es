@@ -5,13 +5,16 @@ import PageHeader from '../Template/PageHeader';
 import {Grid, Col, Glyphicon} from 'react-bootstrap'
 import {Link} from 'react-router-dom';
 import Axios from 'axios';
+import RatingBar from './RatingBar'
+import './animePage.css'
 
 class Anime extends React.Component {
 
     constructor(props){
         super(props);
         this.state = {
-            id: "",
+            isLogged: sessionStorage.getItem('token'),
+            id: this.props.location.state.id,
             animeName: "",
             resume: "",
             genre: "",
@@ -49,7 +52,7 @@ class Anime extends React.Component {
                 <Link   className="genreBox"
                 to={{
                     pathname: `/video/${episodes.id}`,
-                    state: { url: episodes.video_url, animeName: this.state.animeName, epName: episodes.name}
+                    state: { url: episodes.video_url, animeName: this.state.animeName, epName: episodes.name, animeID: this.state.id}
                 }}>
                   <span class=''><Glyphicon glyph="play-circle"/> Episódio {episodes.chapter}</span>
                 </Link>
@@ -67,8 +70,10 @@ class Anime extends React.Component {
                         <div id='galeria-animes' class='pgn-anime'>
                             <div class='box-detalhes-animes pgn-anime'>
                                 <header class='top-padrao full-hidden'>
-                                    <h2 class='tt-padrao'>{this.state.animeName}</h2>
+
+                                    <h2 class='tt-padrao'>{this.state.animeName} {this.state.isLogged ? <RatingBar animeID={this.state.id}/> : null} </h2>
                                 </header>
+
                                 <div class='content full-hidden'>
                                     <Col md={9}>
                                         <div class='thumb'>
@@ -84,7 +89,11 @@ class Anime extends React.Component {
                                         <p>
                                             {this.state.genre}
                                         </p>
+                                        <p>
+                                        </p>
                                     </Col>
+
+
                                 </div>
                             </div>
                         </div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './WatchingPage.css'
+import './animePage.css'
 import Axios from 'axios'
 
 export default class RatingBar extends Component{
@@ -8,12 +8,12 @@ export default class RatingBar extends Component{
 		this.state = {
             stars: 0,
             animeID: this.props.animeID,
-            episodeID: this.props.episodeID,
             token: sessionStorage.getItem('token'),
             evaluationID: ""
         }
+        console.log(this.state.animeID)
         this.clickone = this.clickone.bind(this)
-        Axios.get(`http://34.239.129.125/me/animes/${this.state.animeID}/episodes/${this.state.episodeID}/evaluations`, {
+        Axios.get(`http://34.239.129.125/me/animes/${this.state.animeID}/evaluations`, {
           headers: {
             authorization: `Bearer ${this.state.token}`
           }
@@ -26,7 +26,7 @@ export default class RatingBar extends Component{
         data.score = n;
         var token = this.state.token
         if(this.state.stars === 0){
-          Axios.post(`http://34.239.129.125/animes/${this.state.animeID}/episodes/${this.state.episodeID}/evaluations`, data, {
+          Axios.post(`http://34.239.129.125/animes/${this.state.animeID}/evaluations`, data, {
             headers: {
               authorization: `Bearer ${token}`
             }

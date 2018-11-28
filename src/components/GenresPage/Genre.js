@@ -40,17 +40,17 @@ export default class Genre extends React.Component {
 						</Row>
 						<Col md={4}>
 							{this.state.animes.map((a, index) => {
-								if(index < size){return(<AnimeByGenreBox nome={a.name} id={a.id} thumb={a.thumb_url}/>)}
+								if(index < size){return(<AnimeByGenreBox nome={a.name} id={a.id} thumb={a.thumb_url}/>)} else {return null}
 							})}
 						</Col>
 						<Col md={4}>
 							{this.state.animes.map((a, index) => {
-								if(index >= size && index < size*2){return(<AnimeByGenreBox nome={a.name} id={a.id} thumb={a.thumb_url}/>)}
+								if(index >= size && index < size*2){return(<AnimeByGenreBox nome={a.name} id={a.id} thumb={a.thumb_url}/>)} else {return null}
 							})}
 						</Col>
 						<Col md={4}>
 							{this.state.animes.map((a, index) => {
-								if(index >= size*2){return(<AnimeByGenreBox nome={a.name} id={a.id} thumb={a.thumb_url}/>)}
+								if(index >= size*2){return(<AnimeByGenreBox nome={a.name} id={a.id} thumb={a.thumb_url}/>)} else {return null}
 							})}
 						</Col>
 					</Col>

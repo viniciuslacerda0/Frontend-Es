@@ -7,7 +7,6 @@ import {Link} from 'react-router-dom';
 
 import './custom.css'
 import '../Styles/styles.css'
-import SearchAnimes from './searchAnimes'
 
 
 

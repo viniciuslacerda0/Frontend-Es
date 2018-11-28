@@ -25,7 +25,7 @@ class EditEpisodes extends React.Component {
             <Grid>
               <PageHeader name={this.state.name}/>
               <p>{this.state.resume} </p>
-              <img src={this.state.thumb}/>
+              <img src={this.state.thumb} alt="Foto do anime"/>
 
               <table className="table">
                   <tbody>
