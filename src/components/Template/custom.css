@@ -70,6 +70,8 @@
 }
 
 .propaganda{
+    padding-top: 30px;
+    font-size: 2em;
     margin-top: 30px;
     position: relative;
     left: 20%;
@@ -105,4 +107,11 @@
 
 .ismall {
     color: orange;
+}
+
+.formletras{
+    text-align: center;
+    font-family: cafe;
+    color: black;
+    font-size: 1em;
 }
