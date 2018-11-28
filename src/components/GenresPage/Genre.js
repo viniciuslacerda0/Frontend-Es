@@ -15,13 +15,14 @@ export default class Genre extends React.Component {
 			animes: [],
 			size: 0
 		}
-    Axios.get('http://34.239.129.125/animes?genre='+this.props.match.params.id).then(res => this.setState({animes: res.data.content.animes})).catch(() => alert('error'))
-    this.componentDidMount = this.componentDidMount.bind(this);
 	}
 
 	componentDidMount = () => {
-		// this.setState({size: Math.floor((this.state.animes.length)/3)})
-		this.setState({size: 3})
+		Axios.get('http://34.239.129.125/animes?genre='+this.props.match.params.id)
+		.then(res => this.setState({
+			animes: res.data.content.animes}))
+		.catch(() => alert('error'))
+		
 	}
 
 
@@ -40,17 +41,17 @@ export default class Genre extends React.Component {
 						</Row>
 						<Col md={4}>
 							{this.state.animes.map((a, index) => {
-								if(index < size){return(<AnimeByGenreBox nome={a.name} id={a.id} thumb={a.thumb_url}/>)} else {return null}
+								if(index%3 === 0 ){return(<AnimeByGenreBox nome={a.name} id={a.id} thumb={a.thumb_url}/>)} else {return null}
 							})}
 						</Col>
 						<Col md={4}>
 							{this.state.animes.map((a, index) => {
-								if(index >= size && index < size*2){return(<AnimeByGenreBox nome={a.name} id={a.id} thumb={a.thumb_url}/>)} else {return null}
+								if(index%3 === 1){return(<AnimeByGenreBox nome={a.name} id={a.id} thumb={a.thumb_url}/>)} else {return null}
 							})}
 						</Col>
 						<Col md={4}>
 							{this.state.animes.map((a, index) => {
-								if(index >= size*2){return(<AnimeByGenreBox nome={a.name} id={a.id} thumb={a.thumb_url}/>)} else {return null}
+								if(index%3 === 2){return(<AnimeByGenreBox nome={a.name} id={a.id} thumb={a.thumb_url}/>)} else {return null}
 							})}
 						</Col>
 					</Col>

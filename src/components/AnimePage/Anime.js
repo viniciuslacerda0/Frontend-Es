@@ -68,7 +68,8 @@ class Anime extends React.Component {
                     <Col md={9}>
 
                                 <header className='headerAnime'>
-                                    <h2 className=''>{this.state.animeName} {this.state.isLogged ? <RatingBar animeID={this.state.id}/> : null} </h2>
+                                    <h2 className=''>{this.state.animeName} </h2>
+                                    {this.state.isLogged ? <RatingBar animeID={this.state.id}/> : null}  
                                 </header>
 
                                 <div className='conteudo '>

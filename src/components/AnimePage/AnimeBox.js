@@ -11,7 +11,7 @@ export default class AnimeByGenreBox extends React.Component {
 					  state: {id:this.props.id}
 			}}>
 			<div>
-				<Thumbnail src={this.props.thumb} alt="200x200">
+				<Thumbnail  className="animeCol" src={this.props.thumb} alt="200x200">
 				{this.props.name}
 				</Thumbnail>
 			</div>
