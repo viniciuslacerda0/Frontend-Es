@@ -89,10 +89,13 @@ export default class Topo extends Component {
                                       to={{
                                         pathname:`/contato`,
                                       }}>CONTATO</Link></li>
-          
+
                                 {!this.state.isLogged ? <li style={{color: "white", cursor: "pointer",  "marginLeft":"16px", "marginRight":"16px", "marginTop":"13px"}} onClick={() => this.showLogin()}> LOGIN </li> : null}
                                 {!this.state.isLogged ? <li><p style={{color: "white", cursor: "pointer", "marginRight":"10px", "marginTop":"13px"}} onClick={() => this.showRegister()}> CADASTRO </p></li> : null}
-
+                                {this.state.role === "Admin" ? <li><Link
+                                      to={{
+                                        pathname:`/admin`,
+                                      }}><p style={{color: "white", cursor: "pointer"}}>UPLOAD</p></Link></li> : null}
                                 <li><input className="form-control input-md" placeholder="Pesquisar" onChange={this.handleChangeName} type='text'/></li>
                                 <li><button type='submit' className='buttonMenu btn btn-info' onClick={this.search}>
                                         <i className='fa fa-search'></i>
@@ -101,10 +104,7 @@ export default class Topo extends Component {
 					  state: {id:a.id}
 
 			}}><tr><Thumbnail onClick={() => this.closeForm()} src={a.thumb}>{a.name}</Thumbnail></tr></Link>)}</td></table> ) : null}
-      {this.state.role === "Admin" ? <li><Link
-            to={{
-              pathname:`/admin`,
-            }}><p style={{color: "white", cursor: "pointer"}}>UPLOAD</p></Link></li> : null}
+
                                 {this.state.isLogged ? (<li><p style={{color: "white", cursor: "pointer",  "marginTop":"13px"}} onClick={() => this.logOut()}>SAIR</p></li>) : null}
                             </ul>
                         </div>
