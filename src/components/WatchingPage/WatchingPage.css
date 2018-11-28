@@ -16,3 +16,12 @@
 	margin-right: 55px;
 	background: white;
 }
+
+#sidebar{
+	text-align: left;
+	padding-left: 35px;
+}
+
+.episodebtn{
+	padding: 30px;
+}

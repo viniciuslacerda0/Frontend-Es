@@ -27,7 +27,7 @@ export default class WatchingPage extends Component {
 						<Row><VideoPlayer url={this.props.location.state.url} anime={this.props.location.state.animeName} episodio={this.props.location.state.epName} animeID={this.props.location.state.animeID} episodeID={this.props.match.params.id}/></Row>
 					</Col>
 					<Col className="sideBar" xs={12} md={3}>
-						<SideBar temporada="Episódios"/>
+						<SideBar animeName={this.props.location.state.animeID} temporada="Episódios"/>
 					</Col>
 				</Grid>
 			</div>
