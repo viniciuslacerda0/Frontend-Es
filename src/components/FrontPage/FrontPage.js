@@ -47,6 +47,8 @@ export default class FrontPage extends Component {
 					<Row>
 					<Pagination items={this.state.exampleItems} onChangePage={this.onChangePage}/>
 					<Animes list={this.state.pageOfItems}/>
+					<br/> <br/>
+					<Pagination items={this.state.exampleItems} onChangePage={this.onChangePage}/>
 					</Row>
 				</Col>
 				<Col md={3}>

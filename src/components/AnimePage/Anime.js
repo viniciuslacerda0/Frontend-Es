@@ -14,7 +14,7 @@ class Anime extends React.Component {
         super(props);
         this.state = {
             isLogged: sessionStorage.getItem('token'),
-            id: "",
+            id: this.props.location.state.id,
             animeName: "",
             resume: "",
             genre: "",
@@ -24,8 +24,7 @@ class Anime extends React.Component {
     }
 
     componentDidMount() {
-        // let animeId = this.props.location.state.id;
-        let animeId = "5bfb8d7ddf808e0eb2f51051";
+        let animeId = this.props.location.state.id;
         Axios.get('http://34.239.129.125/animes/'+ animeId)
         .then(response => {
             this.setState({
@@ -94,7 +93,7 @@ class Anime extends React.Component {
                                 <div className='conteudoEp'>
                                         {this.renderAnimeEpisodes()}
                                 </div>
-                                    
+
 
                     </Col>
                     <Col md={3}>
