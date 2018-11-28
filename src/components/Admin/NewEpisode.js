@@ -19,7 +19,9 @@ class NewEpisode extends React.Component{
           search: "",
           searchResults: null,
           enableForm: false,
-          success: false
+          success: false,
+          upando: false,
+          erro: false
       }
 
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -81,7 +83,7 @@ class NewEpisode extends React.Component{
     data.set('chapter', this.state.chapter);
     data.set('description', this.state.description);
     var token = sessionStorage.getItem('token');
-
+    this.setState({upando: true, erro: false})
     Axios.post('http://34.239.129.125/animes/'+this.state.animeId+"/episodes", data, {
       headers: {
         authorization: `Bearer ${token}`,
@@ -89,7 +91,7 @@ class NewEpisode extends React.Component{
       }
     }).then(response =>
       document.location.reload(true)
-    ).catch(() => alert("error"))
+    ).catch(() => this.setState({upando: false, erro: true}))
     event.preventDefault();
   }
 
@@ -99,12 +101,16 @@ class NewEpisode extends React.Component{
         <Grid>
           <div className="white">
                 <PageHeader name="Adicionar um episódio"/>
+
+                {!this.state.enableForm ? <Form onSubmit={this.search}><FormGroup>
+                                    <ControlLabel>Digite o nome do anime:</ControlLabel>
+                                    <FormControl type="text" value={this.state.search} onChange={this.handleChangeAnimeName}/>
+                                  </FormGroup>
+                <Button bsStyle="success">Procurar</Button><p/></Form> : null}
+
+
                 <Form onSubmit={this.handleSubmit}>
-                  {!this.state.enableForm ? <div><FormGroup>
-                                      <ControlLabel>Digite o nome do anime:</ControlLabel>
-                                      <FormControl type="text" value={this.state.search} onChange={this.handleChangeAnimeName}/>
-                                    </FormGroup>
-                  <Button bsStyle="success" onClick={this.search}>Procurar</Button><p/></div> : null}
+
                   {(this.state.searchResults != null && !this.state.enableForm) ? (this.state.searchResults.map(a => <div className="labelAnimes" onClick={() => this.openForm(a)}>{a.name}</div>)) : null}
                   {this.state.enableForm ? (<div className="formSubmit">
                                                             <PageHeader name={`Novo episódio no anime ${this.state.animeName}`}/>
@@ -120,6 +126,8 @@ class NewEpisode extends React.Component{
                                                             <a href="/admin"><Button bsStyle="info">Voltar</Button></a></div>) : null}
                 </Form>
                 {this.state.success ? <Modal>nasda</Modal> : null}
+                {this.state.upando ? <p> Enviando episódio... </p> : null}
+                {this.state.erro ? <p> Erro ao enviar, tente novamente </p> : null}
           </div>
         </Grid>
       </div>
