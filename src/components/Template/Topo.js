@@ -30,8 +30,8 @@ export default class Topo extends Component {
     }
 
     search(){
-        Axios.get("http://34.239.129.125/animes?search=" + this.state.searchName)
-        .then(response => this.setState({searchResults:response.data.content.animes}))
+        // Axios.get("http://34.239.129.125/animes?search=" + this.state.searchName)
+        // .then(response => this.setState({searchResults:response.data.content.animes}))
     }
 
     openForm(e) {
@@ -63,7 +63,7 @@ export default class Topo extends Component {
     }
 
     handleChangeName(event){
-        this.setState({searchName: event.target.value})
+        // this.setState({searchName: event.target.value})
     }
 
     render(){
