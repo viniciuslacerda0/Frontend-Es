@@ -47,9 +47,9 @@ export default class Login extends Component{
                   <form onSubmit={this.handleSubmit}>
                     <FormGroup>
                     <ControlLabel> Email </ControlLabel>
-                    <FormControl className="center" type="email" value={this.state.email} onChange={this.handleChangeEmail}/>
+                    <FormControl className="formletras" type="email" value={this.state.email} onChange={this.handleChangeEmail}/>
                     <ControlLabel> Senha </ControlLabel>
-                    <FormControl className="center" type="password" value={this.state.password} onChange={this.handleChangePassword}/>
+                    <FormControl className="formletras" type="password" value={this.state.password} onChange={this.handleChangePassword}/>
                     <br/>
                   <Button type="submit" className='btn btn-primary'>
                       Entrar

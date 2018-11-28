@@ -1,7 +1,3 @@
-.episodio{
-
-}
-
 .rating{
 	text-align: center;
 	border-style: solid;
@@ -16,9 +12,35 @@
 }
 
 .headerAnime {
+	text-align: left;
+	border-radius: 5px 0px 0px;
 	font-family: moon;
+	text-shadow: 2px 2px black;
+	padding-left: 15px;
+	padding-bottom: 9px;
 	border: white solid;
-	background-color: orange;
-	color: black;
-	border-radius: 4px;
+	border-width: 1px;
+	letter-spacing: 3px;
+	background-image: linear-gradient(to bottom, #232323, #4f4f4f);
+	color: white;
+}
+
+.conteudo {
+	text-align: left;
+	font-family: cafe;
+	font-size: 1.3em;
+	float: left;
+	color: white;
+	border: white solid;
+	border-width: .5px;
+	background-color: #6d6d6d;
+	margin-bottom: 30px;
+}
+
+.conteudoEp {
+	text-align: center;
+	font-family: cafe;
+	font-size: 1.7em;
+	color: white;
+	margin-bottom: 30px;
 }

@@ -39,7 +39,7 @@ class EditEpisodes extends React.Component {
   render(){
       return (
           <div >
-            <Grid>
+            <Grid style={{"marginTop":"50px"}} >
               <PageHeader name="Filtrar um Anime:"/>
               <div className="filter">
                 <Form inline>

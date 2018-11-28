@@ -49,13 +49,13 @@ export default class Register extends Component{
                   <form onSubmit={this.handleSubmit}>
                   <FormGroup>
                   <ControlLabel> Nome do usuário </ControlLabel>
-                  <FormControl className="center" type="text" value={this.state.username} onChange={this.handleChangeUsername}/>
+                  <FormControl className="formletras" type="text" value={this.state.username} onChange={this.handleChangeUsername}/>
                   <ControlLabel> Escolha a senha </ControlLabel>
-                  <FormControl className="center" type="password" value={this.state.password} onChange={this.handleChangePassword}/>
+                  <FormControl className="formletras" type="password" value={this.state.password} onChange={this.handleChangePassword}/>
                   <ControlLabel> Confirme a senha </ControlLabel>
-                  <FormControl className="center" type="password" value={this.state.confirmPasswordpassword} onChange={this.handleChangeConfirmPassword}/>
+                  <FormControl className="formletras" type="password" value={this.state.confirmPasswordpassword} onChange={this.handleChangeConfirmPassword}/>
                   <ControlLabel> Email </ControlLabel>
-                  <FormControl className="center" type="email" value={this.state.email} onChange={this.handleChangeEmail}/>
+                  <FormControl className="formletras" type="email" value={this.state.email} onChange={this.handleChangeEmail}/>
                   <br />
                     <Button onClick={this.handleSubmit} className='btn btn-primary'>
                         Registrar

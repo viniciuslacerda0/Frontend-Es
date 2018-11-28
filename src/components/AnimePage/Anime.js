@@ -14,7 +14,7 @@ class Anime extends React.Component {
         super(props);
         this.state = {
             isLogged: sessionStorage.getItem('token'),
-            id: this.props.location.state.id,
+            id: "",
             animeName: "",
             resume: "",
             genre: "",
@@ -24,7 +24,8 @@ class Anime extends React.Component {
     }
 
     componentDidMount() {
-        let animeId = this.props.location.state.id;
+        // let animeId = this.props.location.state.id;
+        let animeId = "5bfb8d7ddf808e0eb2f51051";
         Axios.get('http://34.239.129.125/animes/'+ animeId)
         .then(response => {
             this.setState({
@@ -48,7 +49,7 @@ class Anime extends React.Component {
 
         return list.map( episodes => (
 
-            <nav className='nav-episodios pgn-anime full-hidden'>
+            <div className='nav-episodios pgn-anime full-hidden'>
                 <Link   className="genreBox"
                 to={{
                     pathname: `/video/${episodes.id}`,
@@ -56,7 +57,7 @@ class Anime extends React.Component {
                 }}>
                   <span className=''><Glyphicon glyph="play-circle"/> Episódio {episodes.chapter}</span>
                 </Link>
-            </nav>
+            </div>
          ));
     }
 
@@ -64,44 +65,36 @@ class Anime extends React.Component {
     render(){
         return(
             <main id='content-site'>
-                <Grid className='container'>
+                <Grid className=''>
                     <Col md={9}>
 
                                 <header className='headerAnime'>
                                     <h2 className=''>{this.state.animeName} {this.state.isLogged ? <RatingBar animeID={this.state.id}/> : null} </h2>
                                 </header>
 
-                                <div className='content full-hidden'>
-                                    <Col md={9}>
-                                        <div className='thumb'>
+                                <div className='conteudo '>
+                                    <Col md={4}>
+                                        <div className=''>
                                             <img src={this.state.thumb} title={this.state.animeName} alt={this.state.animeName} className='img-responsive'/>
                                         </div>
                                     </Col>
-                                    <Col>
-                                        <strong>Sinópse e Detalhes</strong>
+                                        <strong>Sinópse e Detalhes:</strong>
                                         <p>
                                             {this.state.resume}
                                         </p>
-                                        <strong>Gênero:</strong>
-                                        <p>
-                                            {this.state.genre}
-                                        </p>
+                                        <strong>Gênero:</strong> {this.state.genre}
                                         <p>
                                         </p>
-                                    </Col>
-
-
                                 </div>
 
+                                <header className='headerAnime'>
+                                    <h2 className=''>Episódios</h2>
+                                </header>
 
-                        <div className='listagem-episodios'>
-                            <header className='top-padrao full-hidden'>
-                                <h2 className='tt-padrao left no-float-xs'>Episódios</h2>
-                            </header>
-                            <div className='lista-episodios-relacionados'>
-                                {this.renderAnimeEpisodes()}
-                            </div>
-                        </div>
+                                <div className='conteudoEp'>
+                                        {this.renderAnimeEpisodes()}
+                                </div>
+                                    
 
                     </Col>
                     <Col md={3}>
@@ -115,3 +108,14 @@ class Anime extends React.Component {
 }
 
 export default Anime;
+
+
+
+                        // <div className='listagem-episodios'>
+                        //     <header className='top-padrao full-hidden'>
+                        //         <h2 className='tt-padrao left no-float-xs'>Episódios</h2>
+                        //     </header>
+                        //     <div className='lista-episodios-relacionados'>
+                        //         {this.renderAnimeEpisodes()}
+                        //     </div>
+                        // </div>

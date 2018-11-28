@@ -20,14 +20,12 @@ input[type="submit"] {
 }
 
 .img-responsive {
-	max-width: 100%;
-	display: block;
+	margin-left: -14px;
+	width: 500px;
 }
 
 .img-full {
 	width: 100%;
-	height: 100%;
-	display: block;
 }
 
 .container {
@@ -49,8 +47,9 @@ input[type="submit"] {
 }
 
 .nome-thumb {
+	margin-top: 30px;
 	background-color: #262626;
-	border-radius: 4px;
+	border-radius: 5px;
 }
 
 .nome-thumb:hover {
@@ -59,6 +58,7 @@ input[type="submit"] {
 
 .nome-thumb .tt {
 	font-family: cafe;
+	text-shadow: 1px 1px orange;
 	font-size: 2em;
 	color: #fff;
 	display: block;
@@ -77,13 +77,14 @@ input[type="submit"] {
 .nome-thumb .thumb {
 	background-color: #fff;
 	display: block;
-	height: 134px;
+	height: 300px;
 	overflow: hidden;
+	text-align: center;
 	position: relative;
 }
 
 .nome-thumb:hover .thumb img {
-	opacity: .5;
+	opacity: .7;
 }
 
 .nome-thumb .num-episodio {
@@ -104,7 +105,6 @@ input[type="submit"] {
 
 .lista-servers {
 	background: linear-gradient(to bottom, grey, #f9fef5);
-	padding: 1px 7px 43px;
 }
 
 .lista-servers .btn-online {
@@ -122,8 +122,8 @@ input[type="submit"] {
 	position: absolute;
 	border-radius: 3px;
 	text-decoration: none;
-
-
+	text-shadow: 0.8px 0.8px black;
+	letter-spacing: 3px;
 }
 
 @-webkit-keyframes hvr-bob {
@@ -271,25 +271,22 @@ input[type="submit"] {
 
 /* ===== PÃGINA SINGLE EPISÃ“DIOS ONLINE ===== */
 .lista-episodios-relacionados {
-	background-color: #fff;
+	background-color: ro;
 	padding: 15px;
 }
 
 .nav-episodios {
 	overflow-y: auto;
+	width: 100%;
 	margin: 12px 0 0;
 	float: center;
 }
 
 .nav-episodios a:hover {
-	background-color: #f0f0f0;
 	text-decoration: none;
+	color: orange;
 }
 
-.nav-episodios .tt {
-	font-family: cafe;
-	color: black;
-}
 
 
 
