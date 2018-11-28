@@ -14,7 +14,7 @@ class Anime extends React.Component {
         super(props);
         this.state = {
             isLogged: sessionStorage.getItem('token'),
-            id: this.props.location.state.id,
+            id: "",
             animeName: "",
             resume: "",
             genre: "",
@@ -24,12 +24,12 @@ class Anime extends React.Component {
     }
 
     componentDidMount() {
-        let animeId = this.props.location.state.id;
+        let animeId = this.props.match.url.substring(7,this.props.match.url.length);
         Axios.get('http://34.239.129.125/animes/'+ animeId)
         .then(response => {
             this.setState({
                 animeName: response.data.content.anime.name,
-                id: response.data.content.anime.id,
+                id: animeId,
                 genre: response.data.content.anime.genre,
                 resume: response.data.content.anime.resume,
                 thumb: response.data.content.anime.thumb_url
