@@ -59,10 +59,10 @@ class App extends Component {
     return(
               <div className="App">
                     <Topo/>
-                    <Route exact path='/' component={FrontPage}/>
+                    <Route exact path='' component={FrontPage}/>
                     <Route  path='/generos/:id' component={Genre}/>
                     <Route exact path='/generos' component={GenresPage}/>
-                    <Route exact path='/animes' component={AnimeList}/>
+                    <Route exact path='/anime' component={AnimeList}/>
                     {this.state.role === 'Admin' &&
                       <Route exact path='/admin' component={Admin}/>
                     }

@@ -10,12 +10,7 @@ class AnimeList extends React.Component {
 
 	constructor(props){
 		super(props);
-		var listAnimes = [{name: "nanatsu no taizai", thumb: "https://i.kym-cdn.com/photos/images/newsfeed/001/155/275/559.gif" },
-        {name: "naruto", thumb: "https://i.kym-cdn.com/photos/images/newsfeed/001/155/275/559.gif" },
-        {name: "dragon ball",  thumb: "https://i.kym-cdn.com/photos/images/newsfeed/001/155/275/559.gif" },
-        {name: "fulmmetal", thumb: "https://i.kym-cdn.com/photos/images/newsfeed/001/155/275/559.gif" },
-        {name: "fulmmetal", thumb: "https://i.kym-cdn.com/photos/images/newsfeed/001/155/275/559.gif" },
-        {name: "fulmmetal", thumb: "https://i.kym-cdn.com/photos/images/newsfeed/001/155/275/559.gif" }]
+		var listAnimes = []
 
         this.onChangePage = this.onChangePage.bind(this);
 

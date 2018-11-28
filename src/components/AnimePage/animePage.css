@@ -14,3 +14,11 @@
 .center{
 	text-align: center
 }
+
+.headerAnime {
+	font-family: moon;
+	border: white solid;
+	background-color: orange;
+	color: black;
+	border-radius: 4px;
+}

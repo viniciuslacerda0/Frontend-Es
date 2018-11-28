@@ -80,9 +80,11 @@
 }
 
 .header {
+    color: white;
     margin-top: 50px;
     font-family: moon;
     margin-bottom: 70px;
+    text-shadow: 2px 2px #ff0000;
 }
 
 .item{
@@ -99,4 +101,8 @@
 .light{
   color: "white";
   cursor: "pointer";
+}
+
+.ismall {
+    color: orange;
 }
