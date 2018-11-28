@@ -68,7 +68,7 @@ class App extends Component {
                     }
                     <Route exact path='/contato' component={Contact}/>
                   {/*  <Route exact path='/pesquisado' component={SearchAnimes}/> */}
-                    <Route exact path="/video/:id" component={WatchingPage}/>
+                    <Route exact path="/anime/:animeID/video/:id" component={WatchingPage}/>
                     <Route exact path="/anime/:id" component={Anime}/>
                     {this.state.role === 'Admin' &&
                       <Route exact path="/admin/adicionar_anime" component={NewAnime}/>

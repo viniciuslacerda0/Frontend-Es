@@ -51,7 +51,7 @@ class Anime extends React.Component {
             <div className='nav-episodios pgn-anime full-hidden'>
                 <Link   className="genreBox"
                 to={{
-                    pathname: `/video/${episodes.id}`,
+                    pathname: `/anime/${this.state.id}/video/${episodes.id}`,
                     state: { url: episodes.video_url, animeName: this.state.animeName, epName: episodes.name, animeID: this.aniemID}
                 }}>
                   <span className=''><Glyphicon glyph="play-circle"/> Episódio {episodes.chapter}</span>
