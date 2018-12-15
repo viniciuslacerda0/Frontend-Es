@@ -12,3 +12,7 @@ Feito em React.js e bootstrap.
 
 ```npm start```
 
+### RL
+
+The website is currently hosted in zanky.surge.sh
+
